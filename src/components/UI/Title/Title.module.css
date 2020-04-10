@@ -1,0 +1,41 @@
+.Title{
+    margin: 0;
+}
+
+
+.Title h1{
+    /* text-shadow: 1px 1px 1px #555555; */
+    
+    margin: 0;
+}
+
+
+.DarkGrey h1{
+    color: black;
+}
+
+.LightGrey h1{
+    color: gray;
+
+}
+
+.White h1{
+    color: white;
+
+}
+.Purple h1{
+    color: rgb(168, 160 ,240);;
+    margin: 0;
+}
+
+
+.Small h1{
+    font-size: 2.4rem;
+}
+
+.Medium h1{
+    font-size: 2.8rem;
+}
+.Large h1{
+    font-size: 3.2rem;
+}

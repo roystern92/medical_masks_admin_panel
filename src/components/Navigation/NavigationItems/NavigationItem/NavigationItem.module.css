@@ -1,0 +1,75 @@
+.NavigationItem {
+    box-sizing: border-box;
+    height: 90px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    border-bottom: 2px solid #aaaaaa;
+  }
+  
+  .NavigationItem a {
+    height: 90px;
+    width: 100%;
+    line-height: 90px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+  
+    color: #444444;
+    transition: color 0.4s, background-color 0.4s;
+  }
+  
+  .NavigationItem:hover {
+    color: white;
+    background-color: #222222;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: background-color 0.5s linear;
+  }
+  
+  .NavigationItem a:hover {
+    color: white;
+  }
+  
+  @media (min-width: 700px) {
+    .NavigationItem {
+      box-sizing: border-box;
+      width: 120px;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: white;
+      border-bottom: none;
+    }
+  
+    .NavigationItem a {
+      height: 100%;
+      line-height: 250%;
+      text-align: center;
+      text-decoration: none;
+      width: 120px;
+      font-size: 1rem;
+      font-weight: bold;
+  
+      color: inherit;
+      transition: color 0.4s, background-color 0.4s;
+    }
+  
+    .NavigationItem:hover {
+      color: black;
+      background-color: #eeeeee;
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+  
+    .NavigationItem a:hover {
+      color: black;
+    }
+  }
+  

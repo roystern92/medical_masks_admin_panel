@@ -1,0 +1,33 @@
+.Jambotron{
+    padding: 0 auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.DarkGrey{
+    background-color:rgb(65, 71 ,71) ;
+}
+
+.LightGrey {
+    background-color:rgb(200, 200 ,200) ;
+}
+
+.White {
+    background-color:rgb(255, 255 ,255) ;
+}
+
+.Small{
+    height: 250px;
+}
+
+.Medium{
+    height: 375px;
+}
+
+.Large{
+    height: 500px;
+}
