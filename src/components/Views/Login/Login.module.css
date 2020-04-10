@@ -1,0 +1,21 @@
+.Downloader{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(240, 240, 240);
+}
+
+.Form{
+    width: 470px;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 5px solid rgba(0,0,0,0.8);
+    border-radius: 10px;
+    padding: 50px 0;
+    background-color: white;
+}

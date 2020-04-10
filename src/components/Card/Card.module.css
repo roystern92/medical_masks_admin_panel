@@ -1,0 +1,30 @@
+.Card{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 15px;
+    background: #EEEEEE;
+}
+
+.Squre{
+    height: 150px;
+    width: 150px;
+}
+
+.Rectangle{
+    height: 70%;
+    width: 30%; 
+}
+
+.Card img{
+    height: 70px;
+    width: 70px;
+}
+
+.Card h1{
+    font-size: 1rem;
+    text-shadow: none;
+}
