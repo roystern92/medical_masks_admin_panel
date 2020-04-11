@@ -4,7 +4,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: rgb(169, 69, 57);  
+    /* background: rgb(169, 69, 57);   */
+    background: rgb(20, 63, 104);
 
 
     display: flex;
