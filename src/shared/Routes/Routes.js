@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Login from "../../components/Views/Login/Login";
-import Logout from "../../components/Views/Logout/Logout";
+import Login from "../../containers/Login/Login";
+import Logout from "../../containers/Logout/Logout";
+import Orders from '../../containers/Orders/Orders';
 
 // Redux configuration
 import { connect } from "react-redux";
@@ -20,7 +21,7 @@ class Routes extends Component {
     if (this.props.connected) {
       routes = (
         <Switch>
-          <Route path={ORDERS_ROUTE} exact component={Login} />
+          <Route path={ORDERS_ROUTE} exact component={Orders} />
           <Route path={LOGOUT_ROUTE} exact component={Logout} />
           <Redirect to={ORDERS_ROUTE} />
         </Switch>

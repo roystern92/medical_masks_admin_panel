@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import classes from './Login.module.css';
-import {checkValidity, createArrayFromObject} from '../../../shared/Util/Util';
-import Title from '../../UI/Title/Title';
-import {apiAuthControl} from '../../../shared/Controls/controls';
-import Colors from "../../../shared/Colors/Colors";
-import Sizes from "../../../shared/Sizes/Sizes";
-import Inputs from '../../UI/Inputs/Inputs';
+import {checkValidity, createArrayFromObject} from '../../shared/Util/Util';
+import Title from '../../components/UI/Title/Title';
+import {apiAuthControl} from '../../shared/Controls/controls';
+import Colors from "../../shared/Colors/Colors";
+import Sizes from "../../shared/Sizes/Sizes";
+import Inputs from '../../components/UI/Inputs/Inputs';
 
-import Button from '../../UI/Button/Button';
+import Button from '../../components/UI/Button/Button';
 
 import {connect} from 'react-redux';
-import * as actions from '../../../store/actions/index';
+import * as actions from '../../store/actions/index';
 
 class Login extends Component {
 

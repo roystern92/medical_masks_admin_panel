@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './Jambotron.module.css';
+import classes from './Container.module.css';
 import {getButtonClassesByColor} from '../../shared/Colors/Colors';
 import {getClassesBySize} from '../../shared/Sizes/Sizes';
 /*

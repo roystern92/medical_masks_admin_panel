@@ -1,0 +1,21 @@
+.OrderSummery {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  margin: 10px 15%;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  /* border: 3px solid black; */
+  width: 80%;
+}
+
+@media (min-width: 450px) {
+  .OrderSummery {
+  }
+}
+
+@media (min-width: 700px) {
+  .OrderSummery {
+  }
+}

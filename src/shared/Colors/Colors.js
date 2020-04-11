@@ -2,6 +2,8 @@
     LIGHTGREY: 'light grey',
     DARKGREY: 'dark grey',
     WHITE : 'white',
+    RED : 'red',
+    BLUE : 'blue',
     PURPLE: 'purple'
   };
 
@@ -18,10 +20,18 @@
       case colors.WHITE:
         buttonClasses = classes.White;
         break;
-      default:
+      case colors.RED:
+        buttonClasses = classes.Red;
+        break;
+      case colors.BLUE:
+        buttonClasses = classes.Blue;
+        break;
+      case colors.PURPLE:
         buttonClasses = classes.Purple;
         break;
-
+      default:
+        buttonClasses = classes.Black;
+        break;
     }
 
     return buttonClasses;

@@ -1,0 +1,19 @@
+.Logo h2 {
+    color: white;
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+/*.Container  a:hover {*/
+/*text-decoration: none;*/
+/*}*/
+
+.Logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(180, 180, 180);
+    border-radius: 20%;
+}
+
