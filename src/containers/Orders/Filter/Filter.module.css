@@ -1,0 +1,79 @@
+.Filterbar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.Filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-color: white;
+  margin: 5% 0;
+  margin-left: 5%;
+  margin-right: 10px;
+  width: 62%;
+  border-radius: 10px;
+  height: 25px;
+}
+
+.Filter .Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 9px;
+}
+.Search{
+  width: 100%;
+}
+
+.Search input::placeholder {
+  color: rgb(190, 190, 190);
+}
+
+.Search input {
+  color: rgb(150, 150, 150);
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+.Search input:focus {
+  outline: none;
+}
+
+
+
+@media (min-width: 450px) {
+ 
+}
+
+@media (min-width: 700px) {
+  .Filter {
+    margin: 5% 0;
+    margin-left: 5%;
+    margin-right: 10px;
+    width: 73%;
+    border-radius: 10px;
+    height: 35px;
+  }
+
+  .Filter .Logo {
+    margin-left: 5%;
+    margin-right: 9px;
+  }
+
+  .Search input {
+    font-size: 1.1rem;
+    width: 100%;
+  }
+}

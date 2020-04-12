@@ -8,6 +8,10 @@ const initialState = {
     orders: null
 };
 
+const adminOrders = (state, action) => {
+    return updateObject(state, { orders: action.orders});
+};
+
 const authStart = (state, action) => {
     return updateObject(state, { error: null, loading: true });
 };
@@ -36,6 +40,7 @@ const resetError = (state, action) => {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case actionTypes.ADMIN_ORDERS: return adminOrders(state, action);
         case actionTypes.AUTH_START: return authStart(state, action);
         case actionTypes.AUTH_SUCCESS: return authSuccess(state, action);
         case actionTypes.AUTH_FAIL: return authFail(state, action);

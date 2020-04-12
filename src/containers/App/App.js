@@ -8,7 +8,6 @@ import * as actions from '../..//store/actions/index';
 class App extends Component {
   componentDidMount() {
     console.log("[App] componentDidMount");
-    console.log("Saving all the data that saved in local strorage back to redux");
     this.props.autoLogin();
   }
 

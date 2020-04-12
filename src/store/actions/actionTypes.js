@@ -7,3 +7,6 @@ export const AUTH_RESET_ERROR = 'AUTH_RESET_ERROR';
 export const AUTH_USER_PROFILE = 'AUTH_USER_PROFILE';
 
 
+//
+export const ADMIN_ORDERS = 'ADMIN_ORDERS';
+
