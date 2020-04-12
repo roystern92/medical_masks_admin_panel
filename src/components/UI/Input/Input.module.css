@@ -18,7 +18,7 @@
 
 .InputElement {
   font-size: 0.8rem;
-  text-align: end;
+  text-align: start;
   height: 45px;
   width: 75%;
   outline: none;

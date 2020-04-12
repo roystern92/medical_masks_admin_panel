@@ -17,6 +17,7 @@ class Routes extends Component {
   }
 
   render() {
+    console.log("[Routes] render");
     let routes;
     if (this.props.connected) {
       routes = (

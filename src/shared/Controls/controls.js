@@ -31,3 +31,17 @@ export const apiAuthControl = {
     },
 
 };
+
+
+
+export const filterControl = {
+    Email: {
+        elementType: 'input',
+        elementConfig: {
+            type: 'text',
+            placeholder: '{"filter" : "example"}'
+        },
+        value: '',
+        valid: false,
+    },
+};

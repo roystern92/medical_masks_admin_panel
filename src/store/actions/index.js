@@ -2,7 +2,8 @@ export {
     auth,
     logout,
     authCheckState,
-    authResetError
+    authResetError, 
+    fetchOrders
 } from './auth';
 
 

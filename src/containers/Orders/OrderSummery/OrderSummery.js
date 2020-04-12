@@ -19,7 +19,7 @@ class OrderSummery extends Component {
     
     createDetails = () => {
         return this.props.details.map( detail => {
-            return <Detail info={detail} />
+            return <Detail key={detail.id + detail.label} info={detail} />
         })
     }
 

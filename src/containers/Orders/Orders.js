@@ -1,71 +1,95 @@
 import React, { Component } from "react";
 import classes from "./Orders.module.css";
+import * as actions from "../../store/actions/index";
+import { connect } from "react-redux";
 import OrderSummery from "./OrderSummery/OrderSummery";
 import Colors from "../../shared/Colors/Colors";
-import detail from "./OrderSummery/Detail/Detail";
-import axios from '../../axios/axios';
-import Filter from './Filter/Filter';
+import Filter from "./Filter/Filter";
 
 class Orders extends Component {
   state = {
     orders: null,
-    filter: null
+    filter: null,
   };
 
-  componentDidMount () {
+  componentDidMount() {
     // Get all the orders from server
-    this.getOrdersFromServer()
-
+    // this.fetchOrders();
+    console.log("[Ordres] componentDidMount");
+    this.props.fetchOrders("false");
   }
 
-  getOrdersFromServer  = async () => {
-    try{
+  createDetailsForOrderSummery = (order) => {
+    const res = [
+      { label: "_id", content: order._id, color: Colors.RED, id: order._id},
+      { label: "name", content: order.name, color: Colors.BLUE, id: order._id },
+      { label: "email", content: order.email, color: Colors.BLUE, id: order._id },
+      { label: "phone", content: order.phone, color: Colors.BLUE, id: order._id },
+      { label: "mask type", content: order.masks.maskType, color: Colors.BLUE, id: order._id },
+      { label: "amunt", content: order.masks.amount, color: Colors.BLUE, id: order._id },
+      { label: "total price", content: order.totalPrice, color: Colors.BLUE, id: order._id },
+      {
+        label: "address",
+        content:
+          order.address.city +
+          ", " +
+          order.address.street +
+          " " +
+          order.address.number,
+        color: Colors.BLUE,
+      },
+      { label: "createdAt", content: order.createdAt, color: Colors.BLUE }
+    ];
 
-    }catch(err){
-
-    }
+    return res;
   };
 
-  /*
-        I want to give the user an option to filter the results
-        1.Serch bar of name or email.
-        2.Filter by order status.
-
-        At first the client will get all the orders in system
-        and then if he wants to he can ask for filter.
-    */
-
   createOrders = () => {
-    // let details = 
-    // let orders;
-    
-    // [
-    //   { label: "_id:", content: "2165151351355", color: Colors.RED },
-    //   { label: "name:", content: "roy stern", color: Colors.RED },
-    //   { label: "email:", content: "roystern92@gmail.com", color: Colors.RED },
-    //   { label: "city:", content: "תל אביב", color: Colors.BLUE },
-    //   { label: "street:", content: "ראובן רובין ", color: Colors.BLUE },
-    //   { label: "number:", content: "12", color: Colors.BLUE },
-    // ];
-      
+    let orders = null;
+    if (this.props.orders) {
+      orders = this.props.orders.map((order) => {
+        let details = this.createDetailsForOrderSummery(order);
+        return <OrderSummery key={order._id} details={details}/>
+      });
+    }
+    return  orders;
+  };
 
-    // return ;
+  filterOrdersHandler = (filter) => {
+    this.props.fetchOrders(filter);
+    console.log("filter orders!");
   };
 
   createFilter = () => {
-   return <Filter />;
+    return <Filter filter={this.filterOrdersHandler} />;
   };
 
   render() {
+    console.log("[Orders] render");
     const orders = this.createOrders();
     const filter = this.createFilter();
-    const ordersPage =
-     <div className={classes.Orders}>
-         {filter}
+    const ordersPage = (
+      <div className={classes.Orders}>
+        {filter}
         {orders}
-    </div>
+      </div>
+    );
     return ordersPage;
   }
 }
 
-export default Orders;
+const mapStateToProps = (state) => {
+  return {
+    orders: state.orders,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchOrders: (filter) => {
+      dispatch(actions.fetchOrders(filter));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Orders);

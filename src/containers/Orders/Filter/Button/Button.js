@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import classes from "./Button.module.css";
-import {getButtonClassesByColor} from "../../../shared/Colors/Colors";
-import {getClassesBySize} from '../../../shared/Sizes/Sizes';
+import {getButtonClassesByColor} from "../../../../shared/Colors/Colors";
 
 export default class Button extends Component {
   /*
@@ -9,14 +8,12 @@ export default class Button extends Component {
          1. title : string of the button title.
          2. color : color for the background (The colors are: 1. , 2. , 3. )
          3. clicked: A method that will listen to click event
-         4. size
     */
   
   render() {
     let buttonClasses = [];
     let colorClass = getButtonClassesByColor(this.props.color, classes);
-    let sizeClass =  getClassesBySize(this.props.size, classes);
-    buttonClasses.push(classes.Button, colorClass,sizeClass);
+    buttonClasses.push(classes.Button, colorClass);
 
     return (
       <div className={buttonClasses.join(" ")}>

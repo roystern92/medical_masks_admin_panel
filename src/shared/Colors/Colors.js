@@ -3,6 +3,7 @@
     DARKGREY: 'dark grey',
     WHITE : 'white',
     RED : 'red',
+    GREEN : 'green',
     BLUE : 'blue',
     PURPLE: 'purple'
   };
@@ -22,6 +23,9 @@
         break;
       case colors.RED:
         buttonClasses = classes.Red;
+        break;
+      case colors.GREEN:
+        buttonClasses = classes.Green;
         break;
       case colors.BLUE:
         buttonClasses = classes.Blue;

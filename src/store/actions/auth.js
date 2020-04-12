@@ -1,6 +1,14 @@
 import axios from '../../axios/axios';
 import * as actionTypes from './actionTypes';
 
+
+const adminOrders = (orders) => {
+    return {
+        type: actionTypes.ADMIN_ORDERS,
+        orders: orders
+    };
+};
+
 const authStart = () => {
     return {
         type: actionTypes.AUTH_START
@@ -58,10 +66,10 @@ export const postAuth = async (formData, url, dispatch) => {
         
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('expirationDate', expirationDate);
+        console.log("Before Orders Rendering or not??????");
         
         dispatch(setAuthTimeout(timeToLogout));
         dispatch(authSuccess(res.data.token));
-        console.log(res);
     } catch (e) {
         console.log("Error while trying to login.");
         console.log(e.response);
@@ -80,6 +88,24 @@ export const auth = (email, password) => {
         formData.append('password', password);
 
         postAuth(formData, url,dispatch);
+    }
+};
+
+
+export const fetchOrders = (filter) => {
+    return async (dispatch) => {
+        try{
+            console.log(filter);
+            let toFilter = filter === '' ? 'false' : filter;
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token').toString();
+            const url = '/admin/orders/'  + toFilter;
+            let res = await axios.get(url);
+
+            dispatch(adminOrders(res.data.orders));
+      
+          }catch(err){
+            console.log("Error while trying to fetch orders.");
+          }
     }
 };
 

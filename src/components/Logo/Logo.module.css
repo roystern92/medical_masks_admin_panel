@@ -1,7 +1,8 @@
 .Logo h2 {
     color: white;
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     margin: 0;
+    padding: 5px;
 }
 
 /*.Container  a:hover {*/
@@ -9,11 +10,24 @@
 /*}*/
 
 .Logo {
-    height: 100%;
+    height: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(180, 180, 180);
-    border-radius: 20%;
+    border-radius: 5px;
 }
 
+@media (min-width: 450px) {
+}
+
+@media (min-width: 700px) {
+    .Logo h2 {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .Logo {
+        height: 25px;
+        border-radius: 10px;
+    }
+}
