@@ -3,26 +3,48 @@ import classes from "./Filter.module.css";
 import Logo from "../../../components/Logo/Logo";
 import Button from "./Button/Button";
 import Colors from "../../../shared/Colors/Colors";
-
+import {connect} from 'react-redux';
+import * as actions from '../../../store/actions/index';
 
 class Filter extends Component {
   state = {
-    value: ''
+    value: "",
+    first: true,
   };
 
   resetFilter = (event) => {
     event.preventDefault();
+    this.setState({ value: '', first: true });
+    this.props.fetchOrders();
     console.log("reset the search bar.");
   };
 
-
   onInputChangeHandler = (event) => {
-    this.setState({ value: event.target.value });
+    let value = event.target.value.toString().trim();
+    let valueWithFormat;
+    console.log(value.length);
+    if (value.length !== 0) {
+      if (this.state.first || ( value.length === 1 && value !== '{' )) {
+        valueWithFormat = '{"' + value + '":""}'.trim();
+        this.setState({ value: valueWithFormat, first: false });
+      }else{
+        this.setState({ value: value});
+      }
+    } else {
+      valueWithFormat = "";
+      if(!this.state.first){
+        this.setState({ value: valueWithFormat, first: true});
+        this.props.fetchOrders();
+      }else{
+        this.setState({ value: valueWithFormat});
+      }
+
+    }
+    
   };
 
-
-
   render() {
+    console.log("[Filter] render");
     let placeholder = '{"filter" : "example"}';
     return (
       <div className={classes.Filterbar}>
@@ -31,7 +53,12 @@ class Filter extends Component {
             <Logo label="FILTER" />
           </div>
           <div className={classes.Search}>
-            <input onChange={this.onInputChangeHandler} type="text" placeholder={placeholder} value={this.value} />
+            <input
+              onChange={this.onInputChangeHandler}
+              type="text"
+              placeholder={placeholder}
+              value={this.state.value}
+            />
           </div>
         </div>
 
@@ -39,7 +66,7 @@ class Filter extends Component {
           title="Filter"
           color={Colors.GREEN}
           clicked={(event) => {
-            event.preventDefault()
+            event.preventDefault();
             console.log(this.state.value);
             this.props.filter(this.state.value);
           }}
@@ -55,4 +82,16 @@ class Filter extends Component {
   }
 }
 
-export default Filter;
+const mapStateToProps =(state) => {
+  return {
+    error : !!state.error 
+  }
+}
+
+const mapDispatchToProps =(dispatch) => {
+  return {
+    fetchOrders : () => {dispatch(actions.fetchOrders(" "))}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);

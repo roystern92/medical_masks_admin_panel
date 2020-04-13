@@ -11,13 +11,22 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  background-color: white;
   margin: 5% 0;
   margin-left: 5%;
   margin-right: 10px;
   width: 62%;
   border-radius: 10px;
   height: 25px;
+  background-color: white;
+}
+
+.Valid{
+  background-color: white;
+}
+
+.Error input{
+  border: 1px solid red;
+  background-color: #fda49a;
 }
 
 .Filter .Logo {
