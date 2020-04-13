@@ -33,6 +33,9 @@
       case colors.PURPLE:
         buttonClasses = classes.Purple;
         break;
+      case colors.ORANGE:
+        buttonClasses = classes.Orange;
+        break;
       default:
         buttonClasses = classes.Black;
         break;

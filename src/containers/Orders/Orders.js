@@ -19,6 +19,19 @@ class Orders extends Component {
     this.props.fetchOrders("false");
   }
 
+  createStatusDetails = (order) => {
+    const {open, process, closed} = order.status;
+    let res;
+    if(open){
+      res = { label: "status", content: 'open', color: Colors.GREEN, id: order._id };
+    }else if(closed){
+      res = { label: "status", content: 'closed', color: Colors.RED, id: order._id };
+    }else{
+      res = { label: "status", content: 'process', color: Colors.ORANGE, id: order._id };
+    }
+    return res;
+  }
+
   createDetailsForOrderSummery = (order) => {
     const res = [
       { label: "_id", content: order._id, color: Colors.RED, id: order._id},
@@ -27,7 +40,7 @@ class Orders extends Component {
       { label: "phone", content: order.phone, color: Colors.BLUE, id: order._id },
       { label: "mask type", content: order.masks.maskType, color: Colors.BLUE, id: order._id },
       { label: "amunt", content: order.masks.amount, color: Colors.BLUE, id: order._id },
-      { label: "total price", content: order.totalPrice, color: Colors.BLUE, id: order._id },
+      { label: "totalPrice", content: order.totalPrice, color: Colors.BLUE, id: order._id },
       {
         label: "address",
         content:
@@ -40,6 +53,8 @@ class Orders extends Component {
       },
       { label: "createdAt", content: order.createdAt, color: Colors.BLUE }
     ];
+
+    res.push(this.createStatusDetails(order));
 
     return res;
   };

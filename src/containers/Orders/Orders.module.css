@@ -9,20 +9,19 @@
     align-items: flex-start
 }
 
-
 @media (min-width: 450px) {
     .Orders{
          padding:0;
-         margin: 70px 7.5%;
-         width: 85%;
+         margin: 70px 15%;
+         width: 70%;
     }
   }
   
   @media (min-width: 700px) {
     .Orders{
         padding:0;
-        margin: 70px 7.5%;
-        width: 85%;
+        margin: 70px 15%;
+        width: 70%;
     }
   }
   

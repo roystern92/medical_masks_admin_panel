@@ -9,7 +9,7 @@ const initialState = {
 };
 
 const adminOrders = (state, action) => {
-    return updateObject(state, { orders: action.orders});
+    return updateObject(state, { orders: action.orders, error: null});
 };
 
 const authStart = (state, action) => {
@@ -17,7 +17,7 @@ const authStart = (state, action) => {
 };
 
 const authFail = (state, action) => {
-    return updateObject(state, { error: action.error, loading: false });
+    return updateObject(state, { error: action.error, orders: null });
 };
 
 const authSuccess = (state, action) => {

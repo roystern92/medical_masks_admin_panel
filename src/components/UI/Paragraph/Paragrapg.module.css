@@ -15,7 +15,15 @@
 }
 
 .Black p{
-    color: black;
+    color: rgb(141, 126, 126);
+}
+
+.Green p{
+    color: green;
+}
+
+.Orange p{
+    color: orange;
 }
 
 
