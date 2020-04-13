@@ -11,12 +11,9 @@
 }
 
 .EditButton{
-  width: 97%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-
+  display: flex;  
+  align-self: flex-start;
+  padding: 10px 0;
 }
 
 @media (min-width: 450px) {

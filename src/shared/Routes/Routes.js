@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Login from "../../containers/Login/Login";
 import Logout from "../../containers/Logout/Logout";
 import Orders from '../../containers/Orders/Orders';
-import EditOrder from '../../containers/Orders/EditOrder/EditOrder';
+import Edit from '../../containers/Edit/Edit';
 // Redux configuration
 import { connect } from "react-redux";
 
@@ -25,7 +25,7 @@ class Routes extends Component {
         <Switch>
           <Route path={ORDERS_ROUTE} exact component={Orders} />
           <Route path={LOGOUT_ROUTE} exact component={Logout} />
-          <Route path={ EDIT_ROUTE} exact component={EditOrder} />
+          <Route path={ EDIT_ROUTE} exact component={Edit} />
           <Redirect to={ORDERS_ROUTE} />
         </Switch>
       );

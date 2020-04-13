@@ -4,8 +4,9 @@
 }
 
 .Blue .Btn {
-  background-color: rgb(20, 63, 104);;
+  background-color: rgb(20, 63, 104);
   color: white;
+  box-shadow: 1px 1px 1px 1px rgb(50, 50, 50);
 }
 
 .Green .Btn {
@@ -36,6 +37,7 @@
 
 .Button {
   margin: 0 3px;
+  padding: 0 10px;
   height: 20px;
   display: flex;
   justify-content: center;

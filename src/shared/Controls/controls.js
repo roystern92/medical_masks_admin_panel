@@ -35,46 +35,110 @@ export const apiAuthControl = {
 
 
 export const editOrderControls = {
-    Email: {
+  
+    FirstName: {
+        label: 'First Name',
         elementType: 'input',
         elementConfig: {
-            type: 'email',
+            type: 'text',
             placeholder: 'exemple@site.com'
         },
         value: '',
         validation: {
-            required: true,
-            isEmail: true
+            required: true
         },
         valid: false,
         touched: false
     },
 
-
-    Phone: {
+    LastName: {
+        label: 'Last Name',
         elementType: 'input',
         elementConfig: {
-            type: 'number',
-            placeholder: '******'
+            type: 'text',
+            placeholder: 'exemple@site.com'
         },
         value: '',
         validation: {
-            required: true,
-            minLength: 10
+            required: true
         },
         valid: false,
         touched: false
     },
 
+    City: {
+        label: 'City',
+        elementType: 'input',
+        elementConfig: {
+            type: 'text',
+            placeholder: 'exemple@site.com'
+        },
+        value: '',
+        validation: {
+            required: true
+        },
+        valid: false,
+        touched: false
+    },
+    Street: {
+        label: 'Street',
+        elementType: 'input',
+        elementConfig: {
+            type: 'text',
+            placeholder: 'exemple@site.com'
+        },
+        value: '',
+        validation: {
+            required: true
+        },
+        valid: false,
+        touched: false
+    },
+    
+    Number: {
+        label: 'Number',
+        elementType: 'input',
+        elementConfig: {
+            type: 'text',
+            placeholder: 'exemple@site.com'
+        },
+        value: '',
+        validation: {
+            required: false
+        },
+        valid: false,
+        touched: false
+    },
+    
+
+
+    Communication: {
+        label: 'Communication',
+        elementType: 'input',
+        elementConfig: {
+            type: 'text',
+            placeholder: 'exemple@site.com'
+        },
+        value: '',
+        validation: {
+            required: true
+        },
+        valid: false,
+        touched: false
+    },
+
+
     Status: {
+        label: 'Status',
         elementType: 'select',
         elementConfig: {
             options:[
-                {value:  'Male', displayValue: 'Male'},
-                {value:  'Female' , displayValue: 'Female'}
+                {value:  'open', displayValue: 'open'},
+                {value:  'process', displayValue: 'process'},
+                {value:  'closed' , displayValue: 'closed'}
             ]
         },
-        value: 'Male',
+        value: '',
         validation: {
             required: true,
         },

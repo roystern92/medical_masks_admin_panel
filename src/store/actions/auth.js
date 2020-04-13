@@ -11,7 +11,7 @@ const adminOrders = (orders) => {
 export const editOrder = (order) => {
   return {
     type: actionTypes.ADMIN_EDIT_ORDER,
-    order: order,
+    orderEdited: order,
   };
 };
 
