@@ -13,8 +13,6 @@ class Orders extends Component {
   };
 
   componentDidMount() {
-    // Get all the orders from server
-    // this.fetchOrders();
     console.log("[Ordres] componentDidMount");
     this.props.fetchOrders("false");
   }
@@ -59,12 +57,19 @@ class Orders extends Component {
     return res;
   };
 
+  editHandler = (order) => {
+    console.log("trying to edit ");
+    console.log(this.props);
+    this.props.history.push('/edit');
+    this.props.startEditOrder(order);
+  };
+
   createOrders = () => {
     let orders = null;
     if (this.props.orders) {
       orders = this.props.orders.map((order) => {
         let details = this.createDetailsForOrderSummery(order);
-        return <OrderSummery key={order._id} details={details}/>
+        return <OrderSummery edit={this.editHandler} order={order} key={order._id} details={details}/>
       });
     }
     return  orders;
@@ -104,6 +109,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchOrders: (filter) => {
       dispatch(actions.fetchOrders(filter));
     },
+    startEditOrder: (order) => { dispatch(actions.editOrder(order))}
   };
 };
 

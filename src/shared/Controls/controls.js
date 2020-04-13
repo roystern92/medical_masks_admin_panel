@@ -34,14 +34,52 @@ export const apiAuthControl = {
 
 
 
-export const filterControl = {
+export const editOrderControls = {
     Email: {
         elementType: 'input',
         elementConfig: {
-            type: 'text',
-            placeholder: '{"filter" : "example"}'
+            type: 'email',
+            placeholder: 'exemple@site.com'
         },
         value: '',
+        validation: {
+            required: true,
+            isEmail: true
+        },
         valid: false,
+        touched: false
     },
+
+
+    Phone: {
+        elementType: 'input',
+        elementConfig: {
+            type: 'number',
+            placeholder: '******'
+        },
+        value: '',
+        validation: {
+            required: true,
+            minLength: 10
+        },
+        valid: false,
+        touched: false
+    },
+
+    Status: {
+        elementType: 'select',
+        elementConfig: {
+            options:[
+                {value:  'Male', displayValue: 'Male'},
+                {value:  'Female' , displayValue: 'Female'}
+            ]
+        },
+        value: 'Male',
+        validation: {
+            required: true,
+        },
+        valid: true,
+        touched: false
+    },
+
 };

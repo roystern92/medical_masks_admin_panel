@@ -3,7 +3,8 @@ export {
     logout,
     authCheckState,
     authResetError, 
-    fetchOrders
+    fetchOrders,
+    editOrder
 } from './auth';
 
 

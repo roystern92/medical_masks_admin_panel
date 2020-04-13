@@ -8,6 +8,13 @@ const adminOrders = (orders) => {
   };
 };
 
+export const editOrder = (order) => {
+  return {
+    type: actionTypes.ADMIN_EDIT_ORDER,
+    order: order,
+  };
+};
+
 const authStart = () => {
   return {
     type: actionTypes.AUTH_START,

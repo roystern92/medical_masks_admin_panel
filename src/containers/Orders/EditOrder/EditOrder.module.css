@@ -1,0 +1,23 @@
+.EditOrder{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 50px 0;
+    border: 2px solid #111111;
+    height: 700px;
+}
+
+.Form{
+    border: 2px solid #888888;
+    height: 400px;
+    margin: 50px;
+
+}
+
+.PersonalDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

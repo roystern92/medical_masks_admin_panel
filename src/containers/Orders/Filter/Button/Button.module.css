@@ -3,9 +3,9 @@
   color: white;
 }
 
-.White .Btn {
-  background-color: rgb(255, 255, 255);
-  color: black;
+.Blue .Btn {
+  background-color: rgb(20, 63, 104);;
+  color: white;
 }
 
 .Green .Btn {
@@ -64,7 +64,7 @@
 @media (min-width: 700px) {
   .Button {
     margin: 0 3px;
-    height: 40px;
+    height: 30px;
   }
 
   .Button .Btn {

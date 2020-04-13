@@ -5,7 +5,12 @@ const initialState = {
     loading: false,
     token: null,
     error: null,
-    orders: null
+    orders: null,
+    orderEdited: null
+};
+
+const editOrder = (state, action) => {
+    return updateObject(state, { orderEdited: action.order, error: null});
 };
 
 const adminOrders = (state, action) => {
@@ -41,6 +46,7 @@ const resetError = (state, action) => {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.ADMIN_ORDERS: return adminOrders(state, action);
+        case actionTypes.ADMIN_EDIT_ORDER: return editOrder(state, action);
         case actionTypes.AUTH_START: return authStart(state, action);
         case actionTypes.AUTH_SUCCESS: return authSuccess(state, action);
         case actionTypes.AUTH_FAIL: return authFail(state, action);
