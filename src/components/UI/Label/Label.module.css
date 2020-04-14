@@ -1,9 +1,17 @@
 .Label{
-    width: 120px;
     text-align: start;
-    margin: 0 5px;
+    width: 75px;
+    margin-right: 10px;
+    font-size: 1rem;
 }
 
 .Label label{
+    font-family: 'Comic Neue', cursive;
     font-weight: bold;
+}
+
+@media (min-width: 700px) {
+    .Label label{
+    font-size: 1.1rem;
+    }
 }

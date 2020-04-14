@@ -1,8 +1,22 @@
 .Detail{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     margin: 3px 0;
     margin-left: 13px;
+    width: calc(100% - 13px);
 }
+
+@media (min-width: 450px) {
+    .OrderSummery {
+    width: auto;
+    }
+  }
+  
+  @media (min-width: 700px) {
+    .OrderSummery {
+        width: auto;
+    }
+  }
+  

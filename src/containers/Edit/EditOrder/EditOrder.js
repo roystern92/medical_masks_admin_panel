@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {withRouter} from 'react-router-dom';
 import classes from "./EditOrder.module.css";
 import { connect } from "react-redux";
 import {
@@ -15,9 +16,11 @@ import Colors from "../../../shared/Colors/Colors";
 import { createStatusByKey } from "../../../shared/Types/status";
 import Address from "../../../shared/Types/address";
 import axios from "../../../axios/axios";
+import Spinner from '../../../components/UI/Spinner/Spinner';
 
 class EditOrder extends Component {
   state = {
+    loading: false,
     controls: editOrderControls,
     valid: false,
     error: false,
@@ -47,8 +50,8 @@ class EditOrder extends Component {
   setControlsWithOrderValues = () => {
     let updatedControls = { ...this.state.controls };
     const { name, address, status, communication } = this.props.OrderToEdit;
-    updatedControls.FirstName.value = name.split(" ")[0];
-    updatedControls.LastName.value = name.split(" ")[1];
+    updatedControls.FirstName.value = name.trim().split(" ")[0];
+    updatedControls.LastName.value = name.trim().split(" ")[1];
     updatedControls.City.value = address.city;
     updatedControls.Street.value = address.street;
     updatedControls.Number.value = address.number;
@@ -161,7 +164,12 @@ class EditOrder extends Component {
   submitHandler = (event) => {
     event.preventDefault();
     if (this.state.valid) {
-      this.saveChanges();
+      this.setState({loading: true}, () => {
+        this.saveChanges();
+        setTimeout(() => {
+          this.props.history.push('/orders');
+        }, 1000)
+      });
     }
   };
 
@@ -248,7 +256,7 @@ class EditOrder extends Component {
     console.log("[EditOrder] render");
     const form = this.createForm();
     const editOrder = !this.props.OrderToEdit ? null : form;
-    return editOrder;
+    return  this.state.loading ? <Spinner /> : editOrder;
   }
 }
 const mapStateToProps = (state) => {
@@ -257,4 +265,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(EditOrder);
+export default withRouter(connect(mapStateToProps)(EditOrder));

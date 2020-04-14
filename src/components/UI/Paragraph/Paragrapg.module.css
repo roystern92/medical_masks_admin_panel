@@ -32,8 +32,19 @@
 
 
 .Paragraph p{
-    margin: 0 20px;
-
-    /* font-size: 1.4rem; */
+    margin: 0;
+    font-family: 'David Libre', serif;
     font-weight: bold;
+    font-size: 1rem;
+}
+
+
+@media (min-width: 450px) {
+}
+
+@media (min-width: 700px) {
+    .Paragraph p{
+    margin: 0 20px;
+    font-size: 1.1rem;
+    }
 }

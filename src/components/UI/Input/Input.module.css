@@ -17,7 +17,9 @@
 }
 
 .InputElement {
+  font-family: 'Comic Neue', cursive;
   font-size: 0.8rem;
+  font-weight: bold;
   text-align: start;
   height: 32px;
   width: 75%;
