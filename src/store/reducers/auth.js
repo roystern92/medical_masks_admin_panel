@@ -10,7 +10,7 @@ const initialState = {
 };
 
 const editOrder = (state, action) => {
-  return updateObject(state, { orderEdited: action.orderEdited, error: null });
+  return updateObject(state, { orderEdited: action.orderEdited, error: null, orders: null});
 };
 
 const adminOrders = (state, action) => {

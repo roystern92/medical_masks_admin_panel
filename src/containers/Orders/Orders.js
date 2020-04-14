@@ -22,13 +22,16 @@ class Orders extends Component {
   };
 
   createOrders = () => {
-    let orders = null;
+    let res = null;
     if (this.props.orders) {
-      orders = this.props.orders.map((order) => {
+      let orders = this.props.orders.map((order) => {
         return <OrderSummery edit={this.editHandler} order={order} key={order._id} />
       });
+
+    res = <div className={classes.Orders}>{orders}</div>
+     
     }
-    return  orders;
+    return  res;
   };
 
   filterOrdersHandler = (filter) => {
@@ -45,7 +48,7 @@ class Orders extends Component {
     const orders = this.createOrders();
     const filter = this.createFilter();
     const ordersPage = (
-      <div className={classes.Orders}>
+      <div className={classes.OrdersPage}>
         {filter}
         {orders}
       </div>

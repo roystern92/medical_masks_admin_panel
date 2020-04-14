@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Edit.module.css';
-import EditOrder from '../Orders/EditOrder/EditOrder';
+import EditOrder from './EditOrder/EditOrder';
 
 class Edit extends Component {
     render() {

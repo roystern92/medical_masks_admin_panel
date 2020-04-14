@@ -72,7 +72,8 @@ class OrderInfo extends Component {
         { label: "amount", content: order.masks.amount, color: Colors.PURPLE, id: order._id },
         { label: "totalPrice", content: order.totalPrice, color: Colors.PURPLE, id: order._id },
         { label: "address", content: address, color: Colors.PURPLE, id: order._id },
-        { label: "createdAt", content: order.createdAt, color: Colors.BLACK, id: order._id }
+        { label: "createdAt", content: order.createdAt, color: Colors.BLACK, id: order._id },
+        { label: "updatedBy", content: order.updatedBy, color: Colors.BLACK, id: order._id }
       ];
     }
     return res;
@@ -87,7 +88,6 @@ class OrderInfo extends Component {
             title="Edit"
             color={Colors.BLUE}
             clicked={(event) => {
-              console.log("editing");
               this.props.edit(this.props.order);
             }}
           />

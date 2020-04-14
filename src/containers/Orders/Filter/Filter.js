@@ -3,8 +3,8 @@ import classes from "./Filter.module.css";
 import Logo from "../../../components/Logo/Logo";
 import Button from "./Button/Button";
 import Colors from "../../../shared/Colors/Colors";
-import {connect} from 'react-redux';
-import * as actions from '../../../store/actions/index';
+import { connect } from "react-redux";
+import * as actions from "../../../store/actions/index";
 
 class Filter extends Component {
   state = {
@@ -14,9 +14,18 @@ class Filter extends Component {
 
   resetFilter = (event) => {
     event.preventDefault();
-    this.setState({ value: '', first: true });
-    this.props.fetchOrders();
-    console.log("reset the search bar.");
+    if (this.state.value !== "") {
+      this.setState({ value: "", first: true });
+      this.props.fetchOrders();
+      console.log("reset the search bar.");
+    }
+  };
+
+  filterHandler = (event) => {
+    event.preventDefault();
+    if (this.state.value !== "") {
+      this.props.filter(this.state.value);
+    }
   };
 
   onInputChangeHandler = (event) => {
@@ -24,23 +33,21 @@ class Filter extends Component {
     let valueWithFormat;
     console.log(value.length);
     if (value.length !== 0) {
-      if (this.state.first || ( value.length === 1 && value !== '{' )) {
+      if (this.state.first || (value.length === 1 && value !== "{")) {
         valueWithFormat = '{"' + value + '":""}'.trim();
         this.setState({ value: valueWithFormat, first: false });
-      }else{
-        this.setState({ value: value});
+      } else {
+        this.setState({ value: value });
       }
     } else {
       valueWithFormat = "";
-      if(!this.state.first){
-        this.setState({ value: valueWithFormat, first: true});
+      if (!this.state.first) {
+        this.setState({ value: valueWithFormat, first: true });
         this.props.fetchOrders();
-      }else{
-        this.setState({ value: valueWithFormat});
+      } else {
+        this.setState({ value: valueWithFormat });
       }
-
     }
-    
   };
 
   render() {
@@ -65,11 +72,7 @@ class Filter extends Component {
         <Button
           title="Filter"
           color={Colors.GREEN}
-          clicked={(event) => {
-            event.preventDefault();
-            console.log(this.state.value);
-            this.props.filter(this.state.value);
-          }}
+          clicked={this.filterHandler}
         />
 
         <Button
@@ -82,16 +85,18 @@ class Filter extends Component {
   }
 }
 
-const mapStateToProps =(state) => {
+const mapStateToProps = (state) => {
   return {
-    error : !!state.error 
-  }
-}
+    error: !!state.error,
+  };
+};
 
-const mapDispatchToProps =(dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    fetchOrders : () => {dispatch(actions.fetchOrders(" "))}
-  }
-}
+    fetchOrders: () => {
+      dispatch(actions.fetchOrders(" "));
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
