@@ -5,7 +5,8 @@
     RED : 'red',
     GREEN : 'green',
     BLUE : 'blue',
-    PURPLE: 'purple'
+    PURPLE: 'purple',
+    BLACK: 'black'
   };
 
   export const getButtonClassesByColor = (color, classes) => {
@@ -35,6 +36,9 @@
         break;
       case colors.ORANGE:
         buttonClasses = classes.Orange;
+        break;
+      case colors.BLACK:
+        buttonClasses = classes.Black;
         break;
       default:
         buttonClasses = classes.Black;

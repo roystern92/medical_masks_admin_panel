@@ -19,13 +19,13 @@
 .InputElement {
   font-size: 0.8rem;
   text-align: start;
-  height: 45px;
+  height: 32px;
   width: 75%;
   outline: none;
   border: none;
   border: 1px solid rgb(40, 40, 40);
   background-color: rgb(232, 240, 254);
-  padding: 3px 10px;
+  padding: 0 12px;
   display: block;
   box-sizing: border-box;
   border-radius: 10px;

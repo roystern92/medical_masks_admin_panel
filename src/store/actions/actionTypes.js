@@ -9,4 +9,5 @@ export const AUTH_USER_PROFILE = 'AUTH_USER_PROFILE';
 
 //
 export const ADMIN_ORDERS = 'ADMIN_ORDERS';
+export const ADMIN_EDIT_ORDER = 'ADMIN_EDIT_ORDER';
 

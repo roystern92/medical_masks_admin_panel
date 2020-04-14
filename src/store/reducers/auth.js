@@ -1,54 +1,74 @@
-import * as actionTypes from '../actions/actionTypes';
-import { updateObject } from '../../shared/Util/Util';
+import * as actionTypes from "../actions/actionTypes";
+import { updateObject } from "../../shared/Util/Util";
 
 const initialState = {
-    loading: false,
-    token: null,
-    error: null,
-    orders: null
+  loading: false,
+  token: null,
+  error: null,
+  orders: null,
+  orderEdited: null,
+};
+
+const editOrder = (state, action) => {
+  return updateObject(state, { orderEdited: action.orderEdited, error: null });
 };
 
 const adminOrders = (state, action) => {
-    return updateObject(state, { orders: action.orders, error: null});
+  return updateObject(state, {
+    orders: action.orders,
+    error: null,
+    orderEdited: null,
+  });
 };
 
 const authStart = (state, action) => {
-    return updateObject(state, { error: null, loading: true });
+  return updateObject(state, { error: null, loading: true });
 };
 
 const authFail = (state, action) => {
-    return updateObject(state, { error: action.error, orders: null });
+  return updateObject(state, { error: action.error, orders: null });
 };
 
 const authSuccess = (state, action) => {
-
-    return updateObject(state, {
-        error: null,
-        loading: false,
-        token: action.token
-    });
+  return updateObject(state, {
+    error: null,
+    loading: false,
+    token: action.token,
+  });
 };
 
 const authLogout = (state, action) => {
-    return updateObject(state, { token: null, userId: null , loading: false, lists: null, error: null});
+  return updateObject(state, {
+    token: null,
+    userId: null,
+    loading: false,
+    lists: null,
+    error: null,
+  });
 };
 const resetError = (state, action) => {
-    return updateObject(state, { error: null});
+  return updateObject(state, { error: null });
 };
 
-
-
 const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case actionTypes.ADMIN_ORDERS: return adminOrders(state, action);
-        case actionTypes.AUTH_START: return authStart(state, action);
-        case actionTypes.AUTH_SUCCESS: return authSuccess(state, action);
-        case actionTypes.AUTH_FAIL: return authFail(state, action);
-        case actionTypes.AUTH_LOGOUT: return authLogout(state, action);
-        case actionTypes.AUTH_RESET_ERROR: return resetError(state, action);
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case actionTypes.ADMIN_ORDERS:
+      return adminOrders(state, action);
+    case actionTypes.ADMIN_EDIT_ORDER:
+      return editOrder(state, action);
+    case actionTypes.AUTH_START:
+      return authStart(state, action);
+    case actionTypes.AUTH_SUCCESS:
+      return authSuccess(state, action);
+    case actionTypes.AUTH_FAIL:
+      return authFail(state, action);
+    case actionTypes.AUTH_LOGOUT:
+      return authLogout(state, action);
+    case actionTypes.AUTH_RESET_ERROR:
+      return resetError(state, action);
+    default:
+      return state;
+  }
 };
 
 export default reducer;

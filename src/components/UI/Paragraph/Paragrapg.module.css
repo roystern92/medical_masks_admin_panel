@@ -15,7 +15,7 @@
 }
 
 .Black p{
-    color: rgb(141, 126, 126);
+    color: rgb(60, 60, 60);
 }
 
 .Green p{
@@ -26,9 +26,14 @@
     color: orange;
 }
 
+.Purple p{
+    color: rgb(110, 100 ,180);
+}
+
 
 .Paragraph p{
     margin: 0 20px;
+
     /* font-size: 1.4rem; */
-    /* font-weight: 600; */
+    font-weight: bold;
 }

@@ -3,3 +3,7 @@
     text-align: start;
     margin: 0 5px;
 }
+
+.Label label{
+    font-weight: bold;
+}
