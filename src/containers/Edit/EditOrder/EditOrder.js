@@ -51,7 +51,7 @@ class EditOrder extends Component {
     let updatedControls = { ...this.state.controls };
     const { name, address, status, communication } = this.props.OrderToEdit;
     updatedControls.FirstName.value = name.trim().split(" ")[0];
-    updatedControls.LastName.value = name.trim().split(" ")[1];
+    updatedControls.LastName.value = name.split(" ")[1] ? name.trim().split(" ")[1] : " ";
     updatedControls.City.value = address.city;
     updatedControls.Street.value = address.street;
     updatedControls.Number.value = address.number;
