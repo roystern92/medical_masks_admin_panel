@@ -13,7 +13,7 @@ class Orders extends Component {
 
   componentDidMount() {
     console.log("[Ordres] componentDidMount");
-    this.props.fetchOrders("false");
+    this.props.fetchOrders();
   }
 
   editHandler = (order) => {
@@ -36,7 +36,6 @@ class Orders extends Component {
 
   filterOrdersHandler = (filter) => {
     this.props.fetchOrders(filter);
-    console.log("filter orders!");
   };
 
   createFilter = () => {

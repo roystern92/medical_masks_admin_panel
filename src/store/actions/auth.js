@@ -96,7 +96,7 @@ export const fetchOrders = (filter) => {
   return async (dispatch) => {
     try {
       console.log(filter);
-      let toFilter = filter.trim() === "" ? "false" : filter;
+      let toFilter = !filter || filter.trim() === ""  ? 'false' : filter;
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.getItem("token").toString();
       const url = "/admin/orders/" + toFilter;
@@ -104,9 +104,8 @@ export const fetchOrders = (filter) => {
 
       dispatch(adminOrders(res.data.orders));
     } catch (err) {
-      err.response.message = "Not valid filter";
-      dispatch(authFail(err.response));
-      console.log("Error while trying to fetch orders.");
+      dispatch(authFail(err.response.data.message));
+      console.log(err.response);
     }
   };
 };

@@ -57,11 +57,13 @@ class OrderInfo extends Component {
 
   createDetailsForOrderSummery = (order) => {
     let status = this.createStatusDetails(order);
+    let createAt = new Date(order.createdAt).toISOString();
     let res = [
       status,
       { label: "name", content: order.name, color: Colors.BLUE, id: order._id },
-      { label: "createdAt", content: order.createdAt, color: Colors.BLACK, id: order._id }
+      { label: "createdAt", content: createAt, color: Colors.BLACK, id: order._id }
     ];
+
 
     if(this.state.showInfo){
       const address = order.address.city + ", " + order.address.street + " " + order.address.number;
@@ -72,7 +74,7 @@ class OrderInfo extends Component {
         { label: "amount", content: order.masks.amount, color: Colors.PURPLE, id: order._id },
         { label: "totalPrice", content: order.totalPrice, color: Colors.PURPLE, id: order._id },
         { label: "address", content: address, color: Colors.PURPLE, id: order._id },
-        { label: "createdAt", content: order.createdAt, color: Colors.BLACK, id: order._id },
+        { label: "createdAt", content: createAt, color: Colors.BLACK, id: order._id },
         { label: "updatedBy", content: order.updatedBy, color: Colors.BLACK, id: order._id }
       ];
     }

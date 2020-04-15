@@ -45,11 +45,14 @@
 }
 
 .Search input {
-  color: rgb(150, 150, 150);
-  font-size: 0.7rem;
+  font-family: 'Comic Neue', cursive;
+  padding: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: start;
+  font-weight: bold;
   width: 100%;
   outline: none;
   border: none;
@@ -71,7 +74,7 @@
     margin: 5% 0;
     margin-left: 5%;
     margin-right: 10px;
-    width: 73%;
+    width: 77%;
     border-radius: 10px;
     height: 35px;
   }
@@ -79,10 +82,19 @@
   .Filter .Logo {
     margin-left: 5%;
     margin-right: 9px;
+
   }
 
   .Search input {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     width: 100%;
   }
 }
+
+@media (min-width: 900px) {
+
+  .Search input {
+    font-size: 1.1rem;
+  }
+}
+

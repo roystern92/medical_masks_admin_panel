@@ -1,93 +1,90 @@
-.DarkGrey .Btn{
-    background-color:rgb(65, 71 ,71) ;
-    box-shadow: 0 6px rgb(65, 71 ,71);
-    color: white;
+.DarkGrey .Btn {
+  background-color: rgb(65, 71, 71);
+  box-shadow: 0 6px rgb(65, 71, 71);
+  color: white;
 }
 
-.LightGrey .Btn{
-    background-color:rgb(200, 200 ,200) ;
-    box-shadow: 0 6px rgb(200, 200 ,200);
-    color: black;
-
+.LightGrey .Btn {
+  background-color: rgb(200, 200, 200);
+  box-shadow: 0 6px rgb(200, 200, 200);
+  color: black;
 }
 
-.White .Btn{
-    background-color:rgb(255, 255 ,255) ;
-    box-shadow: 0 6px rgb(255, 255 ,255);
-    color: black;
-
+.White .Btn {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 6px rgb(255, 255, 255);
+  color: black;
 }
-.Purple .Btn{
-
-    background: rgb(168, 160 ,240);
-    box-shadow: 0 6px rgb(130, 120 ,200);
-    color: black;
+.Purple .Btn {
+  background: rgb(168, 160, 240);
+  box-shadow: 0 6px rgb(130, 120, 200);
+  color: black;
 }
 
 .DarkGrey .Btn:hover {
-    box-shadow: 0 4px rgb(65, 71 ,71);
-    top: 2px;
+  box-shadow: 0 4px #555555;
+  top: 2px;
 }
 
 .LightGrey .Btn:hover {
-    box-shadow: 0 4px rgb(200, 200 ,200);
-    top: 2px;
+  box-shadow: 0 4px #555555;
+  top: 2px;
 }
 
 .White .Btn:hover {
-    box-shadow: 0 4px rgb(255, 255 ,255);
-    top: 2px;
+  box-shadow: 0 4px rgb(255, 255, 255);
+  top: 2px;
 }
 
 .Purple .Btn:hover {
-    box-shadow: 0 4px rgb(130, 120 ,200);
-    top: 2px;
+  box-shadow: 0 4px rgb(130, 120, 200);
+  top: 2px;
 }
 
-.Button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Button .Btn {
-    width: 100%;
-    height: 90%;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    display: block;
-    position: relative;
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin: 0 auto;
-    
-    border-radius: 20px;
+    box-shadow: 0 0 2px 2px #555555;
+  font-family: "Comic Neue", cursive;
+  width: 100%;
+  height: 90%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin: 0 auto;
+
+  border-radius: 20px;
 }
 
 .Button a:hover {
   text-decoration: none;
 }
 
-
-
 .Button .Btn:active {
-    box-shadow: 0 2px rgb(130, 120 ,200);
-    top: 4px;
+  box-shadow: 0 2px rgb(130, 120, 200);
+  top: 4px;
 }
 
-.Small{
-    width: 180px;
-    height: 50px;
+.Small {
+  width: 180px;
+  height: 50px;
 }
 
-.Medium{
-    width: 200px;
-    height: 70px;
+.Medium {
+  width: 200px;
+  height: 70px;
 }
 
-.Large{
-    width: 230px;
-    height: 90px;
+.Large {
+  width: 230px;
+  height: 90px;
 }
