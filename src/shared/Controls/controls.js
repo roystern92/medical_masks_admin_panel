@@ -42,8 +42,7 @@ export const editOrderControls = {
     label: "First Name",
     elementType: "input",
     elementConfig: {
-      type: "text",
-      placeholder: "exemple@site.com",
+      type: "text"
     },
     value: "",
     validation: {
@@ -58,12 +57,11 @@ export const editOrderControls = {
     label: "Last Name",
     elementType: "input",
     elementConfig: {
-      type: "text",
-      placeholder: "exemple@site.com",
+      type: "text"
     },
     value: "",
     validation: {
-      required: true,
+      required: false,
     },
     valid: false,
     touched: false,
@@ -74,8 +72,7 @@ export const editOrderControls = {
     label: "City",
     elementType: "input",
     elementConfig: {
-      type: "text",
-      placeholder: "exemple@site.com",
+      type: "text"
     },
     value: "",
     validation: {
@@ -89,8 +86,7 @@ export const editOrderControls = {
     label: "Street",
     elementType: "input",
     elementConfig: {
-      type: "text",
-      placeholder: "exemple@site.com",
+      type: "text"
     },
     value: "",
     validation: {
@@ -105,8 +101,7 @@ export const editOrderControls = {
     label: "Number",
     elementType: "input",
     elementConfig: {
-      type: "text",
-      placeholder: "exemple@site.com",
+      type: "text"
     },
     value: "",
     validation: {
@@ -121,8 +116,7 @@ export const editOrderControls = {
     label: "Communication",
     elementType: "input",
     elementConfig: {
-      type: "text",
-      placeholder: "exemple@site.com",
+      type: "text"
     },
     value: "",
     validation: {
