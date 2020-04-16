@@ -36,6 +36,9 @@
 .InputElement:focus {
   outline: none;
 }
+.InputElement::placeholder {
+  font-family: 'Comic Neue', cursive;
+}
 
 .Invalid {
   border: 1px solid red;
