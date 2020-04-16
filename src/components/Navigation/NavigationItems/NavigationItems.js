@@ -15,11 +15,17 @@ class NavigationItems extends Component {
         <NavigationItem link="/orders" exact>
           Orders
         </NavigationItem>
+        <NavigationItem link="/new-order" exact>
+          New Order
+        </NavigationItem>
       </ul>
     }else{
         navigationItems =     <ul className={classes.NavigationItems}>
         <NavigationItem link="/login" exact>
           Login
+        </NavigationItem>
+        <NavigationItem link="/new-order" exact>
+          New Order
         </NavigationItem>
       </ul>
     }

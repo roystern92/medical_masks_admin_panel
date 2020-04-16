@@ -1,0 +1,157 @@
+.NewOrder {
+  background-color: rgb(241, 127, 33);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Title{
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+}
+
+.Title hr{
+    background-color: rgb(91, 130, 155);
+    width: 60%;
+    height: 4px;
+    border: none;
+    text-align: center;
+}
+
+.Title h1{
+    margin: 0;
+    color: white;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.Title h1 span{
+    color: rgb(91, 130, 155);
+}
+
+.Body{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Mask img {
+    position: absolute;
+    transform: rotate(-38deg);
+    top: 22%;
+    left: -45px;
+    height: 350px;
+    width: 350px;
+    padding: 0;
+    margin: 0;
+}
+
+.Info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Info h4{
+    margin: 8px;
+    font-family: 'David Libre', serif;
+    font-weight: 400;
+    color: white;
+    text-align: end;
+    font-size: 17px;
+}
+
+.Info img{
+    height: 15px;
+    width: 15px;
+}
+.MasksInfo{
+    padding-right: 15px;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.PriceInfo{
+    margin-top: 220px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 15px;
+    
+}
+
+.InfoTitle{
+    font-family: 'Heebo', sans-serif;
+    text-align: end;
+    color: white;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.InfoSubTitle{
+    font-family: 'Heebo', sans-serif;
+    text-align: end;
+    color: white;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.InfoParagraph{
+    font-family: 'Heebo', sans-serif;
+    text-align: end;
+    color: white;
+    margin: 0;
+    font-size: 9px;
+    font-weight: 400;
+}
+
+.InfoTitlehWithMargin{
+    margin-right: 15px;
+}
+
+.InfoSubTitlehWithMargin{
+    margin-right: 25px;
+}
+
+.InfoParagraphWithMargin{
+    margin-right: 10px;
+}
+
+.InfoSubParagraphWithMargin{
+    margin-right: 40px;
+}
+.InfoParagraphSupply{
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+.Line{
+    background-color: rgb(91, 130, 155);
+    width: 35%;
+    height: 5px;
+    margin: 2px 35px;
+    border: none;
+    text-align: center;
+}
+
+.Test{
+    width: 60%;
+}
+

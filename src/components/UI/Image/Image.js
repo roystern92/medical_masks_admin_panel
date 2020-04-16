@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 
 export default class Image extends Component {
     render() {
+        console.log("render image");
         return (
             <div>
-                    {/* <img src={require('../../../asssets/images/' + this.props.name)} alt="text"/> */}
+                    <img src={require('../../../assets/images/' + this.props.name)} alt="text"/>
             </div>
         )
     }
