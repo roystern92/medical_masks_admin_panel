@@ -2,10 +2,25 @@ import React, { Component } from "react";
 import classes from "./NewOrder.module.css";
 import axios from "axios";
 import Image from "../../components/UI/Image/Image";
+import OrderForm from "./OrderForm/OrderForm";
 
 class NewOrder extends Component {
   state = {
     loading: false,
+  };
+
+  createSubTitles = () => {
+    const res = (
+      <div className={classes.SubTitles}>
+        <h1 className={classes.Sale}>מחיר 150 ש"ח</h1>
+        <h1>מבצע 110 ש"ח</h1>
+        <hr className={classes.Line} />
+        <h3>!זמין במלאי - אין הגבלה על כמות</h3>
+        <h1>משלוח מהיר עד הבית</h1>
+        <hr className={classes.LineThin} />
+      </div>
+    );
+    return res;
   };
 
   createTilte = () => {
@@ -13,7 +28,8 @@ class NewOrder extends Component {
     const title = <h1>מארז {spanMessage} מסכות חד-פעמיות</h1>;
     const res = (
       <div className={classes.Title}>
-        {title} <hr />
+        {title}
+        <hr className={classes.Line} />
       </div>
     );
     return res;
@@ -22,7 +38,7 @@ class NewOrder extends Component {
   createInfo = (info) => {
     const icon = <Image name="bullet.png" />;
     const res = (
-      <div className={classes.Info}>
+      <div className={classes.MaskItemInfo}>
         <h4>{info}</h4>
         {icon}
       </div>
@@ -31,68 +47,69 @@ class NewOrder extends Component {
   };
 
   createBody = () => {
+    let hebFormat = "שכבות הגנה-רמת סינון גבוהה ";
+    hebFormat = " 3 " + hebFormat;
+
     const details = [
-      "3 שכבות הגנה-רמת סינון גבוהה",
+      hebFormat,
       "גומי נמתח המתלבש על האוזניים",
-      "מידה אחידה ",
-      "תו תקן אירופאי ",
+      "מידה אחידה (SIZE ONE)",
+      "תו תקן אירופאי (CE)",
     ];
     const maskPicture = (
-      <div className={classes.Mask}>
-        {" "}
-        <Image name="mask.png" />{" "}
+      <div className={classes.MaskPicture}>
+        <Image name="mask.png" />
       </div>
     );
     const detailsOfTheMask = details.map((detail) => {
       return this.createInfo(detail);
     });
     const infoAboutTheMasks = (
-      <div className={classes.MasksInfo}>{detailsOfTheMask}</div>
+      <div className={classes.MaskInfo}>{detailsOfTheMask}</div>
+    );
+
+    const form = (
+      <div className={classes.OrderForm}>
+        <OrderForm />
+      </div>
     );
     const body = (
       <div className={classes.Body}>
-        {maskPicture}
-        {infoAboutTheMasks}
+        <div className={classes.Test}>
+          {maskPicture}
+          {infoAboutTheMasks}
+        </div>
+        <div className={classes.Middle}>
+          {form}
+          <div className={classes.MiddleTitles}>
+            {this.createSubTitles()}
+            </div>
+        </div>
       </div>
     );
     return body;
   };
 
-  createPriceInfo = () => {
-    const res = (
-      <div className={classes.PriceInfo}>
-        <h1 className={classes.InfoTitle+ " " + classes.InfoTitlehWithMargin}>מחיר 150 ש"ח</h1>
-        <h1 className={classes.InfoTitle+ " " + classes.InfoTitlehWithMargin}>מבצע 110 ש"ח</h1>
-        <h3 className={classes.InfoSubTitle+ " " + classes.InfoSubTitlehWithMargin}>משלוח וזמני אספקה</h3>
-        <p className={classes.InfoParagraph+ " " + classes.InfoParagraphWithMargin}>עלות משלוח משתנה בהתאם ליעד ההזמנה</p>
-        <p className={classes.InfoParagraph+ " " + classes.InfoSubParagraphWithMargin}>משלוח מהיר עד הבית</p>
-        <hr className={classes.Line}/>
-        <h5 className={classes.InfoParagraph+ " " + classes.InfoParagraphSupply}>!זמין במלאי - אין הזמנה על כמות</h5>
-        <hr className={classes.Line}/>
-
-      </div>
-    );
-    return res;
-  };
-
-
-  createBottom = () => {
-    const info = this.createPriceInfo();
-    return info;
-  };
-
   render() {
     const title = this.createTilte();
     const pageBody = this.createBody();
-    const bottom = this.createBottom();
-    return (
+    const subTitles = (
+      <div className={classes.Bottom}>{this.createSubTitles()}</div>
+    );
+    const newOrder = (
       <div className={classes.NewOrder}>
         {title}
         {pageBody}
-        {bottom}
+        {subTitles}
       </div>
     );
+    return newOrder;
   }
+
+  createSaleInfo = () => {
+    const info = this.createPriceInfo();
+    return info;
+  };
 }
 
 export default NewOrder;

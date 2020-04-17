@@ -37,7 +37,7 @@
   outline: none;
 }
 .InputElement::placeholder {
-  font-family: 'Comic Neue', cursive;
+  outline: none;
 }
 
 .Invalid {

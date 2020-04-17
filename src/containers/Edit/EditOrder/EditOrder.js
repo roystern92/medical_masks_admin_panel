@@ -4,7 +4,7 @@ import classes from "./EditOrder.module.css";
 import { connect } from "react-redux";
 import {
   editOrderControls,
-  editControlsTypes,
+  controlsTypes,
 } from "../../../shared/Controls/controls";
 import {
   checkValidity,
@@ -214,11 +214,11 @@ class EditOrder extends Component {
   createForm = () => {
     let arrayControls = createArrayFromObject(this.state.controls);
     const addressConfig = {
-      type: editControlsTypes.ADDRESS,
+      type: controlsTypes.ADDRESS,
       class: classes.AddressInputs,
     };
     const statusConfig = {
-      type: editControlsTypes.STATUS,
+      type: controlsTypes.STATUS,
       class: classes.Status,
     };
     const addressAndStatus = this.getInputsWithDifftentTypesCombined(
@@ -229,12 +229,12 @@ class EditOrder extends Component {
     );
     const personalDeatails = this.getInputs(
       arrayControls,
-      editControlsTypes.FULLNAME,
+      controlsTypes.FULLNAME,
       classes.PersonalDetails
     );
     const communication = this.getInputs(
       arrayControls,
-      editControlsTypes.COMMUNICATION,
+      controlsTypes.COMMUNICATION,
       classes.PersonalDetails
     );
     const submit = this.getSubmitButton();

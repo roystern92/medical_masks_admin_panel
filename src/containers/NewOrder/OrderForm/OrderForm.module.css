@@ -1,0 +1,85 @@
+.OrderForm{
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 25px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.OrderForm h1{
+  font-family: "Heebo", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 7px;
+    color: rgb(241, 139, 58);
+}
+
+.Submit{
+    margin: 10px 0;
+}
+
+.Submit button{
+    background-color: rgb(241, 139, 58);
+    font-size: 1.2rem;
+    padding: 4px 30px;
+    border-radius: 15px;
+    box-shadow: none;
+    border: none;
+  outline: none;
+
+}
+
+.Address{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@media (min-width: 170px) {
+.OrderForm h1{
+  font-size: 0.7rem;
+}
+.OrderForm{
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;  
+
+}
+
+.Address{
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.Submit button{
+  background-color: rgb(241, 139, 58);
+  font-size: 1rem;
+  padding: 4px 20px;
+  border-radius: 10px;
+}
+}
+
+@media (min-width: 370px) {
+  .Address{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+}
+
+
+@media (min-width: 600px) {
+  .OrderForm h1{
+    font-size: 1.3rem;
+  }
+}

@@ -1,157 +1,522 @@
 .NewOrder {
+  overflow: hidden;
   background-color: rgb(241, 127, 33);
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  font-family: "Heebo", sans-serif;
+}
+
+.Title {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  font-family: "Heebo", sans-serif;
+}
+
+.Title h1 {
+  letter-spacing: 1px;
+  margin: 0;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.Title h1 span {
+  color: rgb(98, 139, 165);
+}
+
+.Title .Line {
+  background-color: rgb(91, 130, 155);
+  height: 5px;
+}
+
+.SubTitles {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(94, 130, 155);
+}
+
+.SubTitles .Line {
+  width: 70%;
+  height: 3px;
+  margin: 0 15%;
+  margin-right: 35px;
+}
+.SubTitles .LineThin {
+  width: 70%;
+  height: 1px;
+  margin: 0 15%;
+  margin-right: 35px;
+  background-color: rgb(241, 127, 33);
+  border: none;
+  text-align: center;
+}
+
+.SubTitles h1,
+.SubTitles h3 {
+  margin: 0;
+  color: white;
+}
+
+.SubTitles .Sale {
+  font-weight: bolder;
+  text-decoration: line-through;
+  color: rgb(241, 127, 33);
+}
+
+.NewOrder .SubTitles h1 {
+  font-size: 1.2rem;
+}
+
+.NewOrder .SubTitles h3 {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.Line {
+  background-color: rgb(241, 127, 33);
+  width: 60%;
+  height: 3px;
+  border: none;
+  text-align: center;
+}
+
+.Body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.Body .Test {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: flex-start;
+  margin-bottom: 50px;
+}
+.MaskInfo {
+  max-width: 60%;
+  margin-top: 20px;
+  border-radius: 7%;
 }
 
-.Title{
-    margin-top: 40px;
-    width: 100%;
-    text-align: center;
-    font-family: 'Heebo', sans-serif;
+.MaskItemInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.Title hr{
-    background-color: rgb(91, 130, 155);
-    width: 60%;
-    height: 4px;
+.MaskItemInfo h4 {
+  margin: 10px 0;
+  font-family: "Heebo", sans-serif;
+  color: white;
+  text-align: end;
+  font-weight: bold;
+  font-size: 0.75rem;
+  direction: rtl;
+}
+
+.MaskItemInfo img {
+  margin: 0 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.MaskPicture {
+  position: absolute;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.MaskPicture img {
+  top: 0;
+  position: absolute;
+  left: 0;
+  padding-left: 20px;
+  transform: rotate(52deg);
+  max-width: 80%;
+}
+
+.OrderForm {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Bottom {
+  width: 100%;
+}
+
+.Middle {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.MiddleTitles {
+  display: none;
+}
+
+@media (min-width: 170px) {
+  .SubTitles .Line {
+    width: 70%;
+    height: 3px;
+    margin: 0 15%;
+    margin-right: 35px;
+  }
+  .SubTitles .LineThin {
+    width: 70%;
+    height: 1px;
+    margin: 0 15%;
+    margin-right: 35px;
+    background-color: rgb(241, 127, 33);
     border: none;
     text-align: center;
+  }
+
+  .NewOrder .SubTitles h1 {
+    font-size: 0.8rem;
+  }
+
+  .NewOrder .SubTitles h3 {
+    font-size: 0.5rem;
+  }
+
+  .Body .Test {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  .Title {
+    margin-top: 15px;
+  }
+  .Title h1 {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  .MaskItemInfo h4 {
+    font-size: 7px;
+    margin: 6px 0;
+  }
+
+  .MaskItemInfo img {
+    margin: 0 3px;
+    height: 5px;
+    width: 5px;
+  }
+
+  .MaskPicture img {
+    max-width: 40%;
+    top: 45px;
+    left: 0px;
+  }
+
+  .OrderForm {
+    width: 80%;
+  }
 }
 
-.Title h1{
-    margin: 0;
-    color: white;
-    font-size: 32px;
+@media (min-width: 360px) {
+  /* iphone 5 */
+
+  .Line hr {
+    height: 6px;
+  }
+
+  .Title {
+    margin-top: 25px;
+  }
+  .Title h1 {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .Body .Test {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .MaskItemInfo h4 {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+
+  .MaskItemInfo img {
+    margin: 0 9px;
+    height: 13px;
+    width: 13px;
+  }
+
+  .MaskPicture img {
+    max-width: 120%;
+    top: 45px;
+    left: 15px;
+  }
+}
+
+@media (min-width: 400px) {
+  /* iphone 8 + */
+  .MaskInfo{
+    margin-top: 0;
+  }
+
+  .NewOrder {
+    overflow: hidden;
+  }
+  .Line {
+    height: 8px;
+  }
+
+  .Title {
+    margin-top: 30px;
+  }
+  .Title h1 {
+    font-size: 1.7rem;
+  }
+
+  .Body .Test {
+    margin-top: 5px;
+    margin-bottom: 40px;
+  }
+  .MaskItemInfo h4 {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .MaskItemInfo img {
+    margin: 0 11px;
+    height: 13px;
+    width: 13px;
+  }
+
+  .MaskPicture img {
+    max-width: 120%;
+    top: 20px;
+    left: 0px;
+  }
+
+  .OrderForm {
+    width: 85%;
+  }
+}
+
+@media (min-width: 500px) {
+  .NewOrder {
+    overflow: hidden;
+  }
+  .Line {
+    height: 8px;
+  }
+
+  .Title {
+    margin-top: 30px;
+  }
+  .Title h1 {
+    font-size: 2.5rem;
+  }
+  .Body .Test {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  .MaskItemInfo h4 {
+    font-size: 19px;
+    margin: 10px 0;
     font-weight: 400;
+  }
+
+  .MaskItemInfo img {
+    margin: 0 11px;
+    height: 22px;
+    width: 22px;
+  }
+
+  .MaskPicture img {
+    max-width: 200%;
+    top: 20px;
+    left: 30px;
+  }
+
+  .OrderForm {
+    width: 40%;
+  }
 }
 
-.Title h1 span{
-    color: rgb(91, 130, 155);
-}
+@media (min-width: 700px) {
 
-.Body{
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
+  .MaskInfo {
+    margin-right: 7%;
+  }
 
-.Mask img {
-    position: absolute;
-    transform: rotate(-38deg);
-    top: 22%;
-    left: -45px;
-    height: 350px;
-    width: 350px;
-    padding: 0;
-    margin: 0;
-}
+  .Title .Line {
+    height: 10px;
+  }
 
-.Info{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
+  .NewOrder .SubTitles h1 {
+    font-size: 1.7rem;
+    margin: 10px 0;
+  }
 
-.Info h4{
-    margin: 8px;
-    font-family: 'David Libre', serif;
-    font-weight: 400;
-    color: white;
-    text-align: end;
-    font-size: 17px;
-}
-
-.Info img{
-    height: 15px;
-    width: 15px;
-}
-.MasksInfo{
-    padding-right: 15px;
-    margin: 15px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-.PriceInfo{
-    margin-top: 220px;
-    width: 100%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 15px;
-    
-}
-
-.InfoTitle{
-    font-family: 'Heebo', sans-serif;
-    text-align: end;
-    color: white;
-    margin: 0;
+  .NewOrder .SubTitles h3 {
+    margin: 10px 0;
     font-size: 1.4rem;
     font-weight: 400;
-}
+  }
 
-.InfoSubTitle{
-    font-family: 'Heebo', sans-serif;
-    text-align: end;
-    color: white;
+  .SubTitles {
+    justify-content: center;
+    height: 380px;
+    width: 330px;
+    border-radius: 25px;
+  }
+
+  .Title h1 {
+    font-size: 2.9rem;
+  }
+  .Body .Test {
+    margin: 60px 0;
+  }
+
+  .MaskItemInfo h4 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .MaskItemInfo img {
+    margin: 0 11px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .MaskPicture img {
+    transform: rotate(45deg);
+    max-width: 230%;
+    top: 0;
+    left: 0;
+  }
+
+  .OrderForm {
+    width: 310px;
+    height: 400px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .Bottom {
+    display: none;
+  }
+
+  .Middle {
+    margin: 50px 0;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .MiddleTitles {
+    display: flex;
+    justify-content: center;
     margin: 0;
-    font-size: 0.9rem;
-    font-weight: 400;
+  }
 }
 
-.InfoParagraph{
-    font-family: 'Heebo', sans-serif;
-    text-align: end;
-    color: white;
-    margin: 0;
-    font-size: 9px;
-    font-weight: 400;
+@media (min-width: 850px) {
+  .MaskPicture img {
+    top: 0;
+    left: 70px;
+  }
 }
 
-.InfoTitlehWithMargin{
-    margin-right: 15px;
+@media (min-width: 950px) {
+  .MaskItemInfo img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .MaskItemInfo h4 {
+    font-size: 27px;
+    margin: 10px 0;
+  }
+
+  .NewOrder .SubTitles h1 {
+    font-size: 1.9rem;
+  }
+
+  .NewOrder .SubTitles h3 {
+    font-size: 1.6rem;
+  }
+
+  .Body .Test {
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  .MaskPicture img {
+    transform: rotate(40deg);
+    max-width: 270%;
+    left: 60px;
+  }
+
+  .SubTitles {
+    width: 400px;
+  }
+
+  .OrderForm {
+    width: 380px;
+  }
 }
 
-.InfoSubTitlehWithMargin{
-    margin-right: 25px;
+@media (min-width: 1050px) {
+  .MaskInfo {
+    margin-right: 8%;
+  }
+
+  .MaskItemInfo h4 {
+    font-size: 28px;
+    margin: 10px 0;
+  }
+
+  .MaskItemInfo img {
+    margin: 0 11px;
+    height: 35px;
+    width: 35px;
+  }
+
+  .MaskPicture img {
+     max-width: 300%;
+    left: 70px;
+    top: -35px;
+  }
 }
 
-.InfoParagraphWithMargin{
-    margin-right: 10px;
-}
-
-.InfoSubParagraphWithMargin{
-    margin-right: 40px;
-}
-.InfoParagraphSupply{
-    margin-right: 5px;
-    font-size: 14px;
-    font-weight: 300;
-}
-
-
-.Line{
-    background-color: rgb(91, 130, 155);
-    width: 35%;
-    height: 5px;
-    margin: 2px 35px;
-    border: none;
-    text-align: center;
-}
-
-.Test{
-    width: 60%;
+@media (min-width: 1150px) {
+  .MaskInfo {
+    margin-right: 10%;
+  }
+  .MaskPicture img {
+    transform: rotate(40deg);
+    max-width: 300%;
+    left: 130px;
+  }
 }
 
