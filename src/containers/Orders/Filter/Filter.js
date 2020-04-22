@@ -1,87 +1,122 @@
 import React, { Component } from "react";
 import classes from "./Filter.module.css";
-import Logo from "../../../components/Logo/Logo";
 import Button from "./Button/Button";
 import Colors from "../../../shared/Colors/Colors";
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
+import Input from "../../Edit/EditOrder/Input/Input";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class Filter extends Component {
   state = {
-    value: "",
-    first: true,
+    status: {
+      label: "Status",
+      elementType: "select",
+      elementConfig: {
+        options: [
+          { value: "open", displayValue: "Open" },
+          { value: "process", displayValue: "Process" },
+          { value: "closed", displayValue: "Closed" },
+        ],
+      },
+      value: 'open'
+    },
+
+    from: new Date(),
+    to: new Date(),
   };
 
-  resetFilter = (event) => {
-    event.preventDefault();
-    if (this.state.value !== "") {
-      this.setState({ value: "", first: true });
-      this.props.fetchOrders();
-      console.log("reset the search bar.");
-    }
+  componentDidMount() {
+    console.log("[Filter] cdm");
+  }
+
+  onDateChange = (key, date) => {
+    let update = {};
+    update[key] = date;
+    this.setState(update);
+  };
+
+  onStatusChange = (event) => {
+    this.setState({
+      status: { ...this.state.status, value: event.target.value },
+    });
+  };
+
+  createStatus = () => {
+    const res = (
+      <Input
+        elementType="select"
+        elementConfig={this.state.status.elementConfig}
+        value={this.state.status.value}
+        changed={(event) => this.onStatusChange(event)}
+      />
+    );
+    return res;
+  };
+
+  createDatePickers = () => {
+    const from = (
+      <DatePicker
+        className={classes.Date}
+        selected={this.state.from}
+        onChange={(date) => this.onDateChange("from", date)}
+        showTimeSelect
+      />
+    );
+
+    const to = (
+      <DatePicker
+        className={classes.Date}
+        selected={this.state.to}
+        onChange={(date) => this.onDateChange("to", date)}
+        showTimeSelect
+      />
+    );
+
+    const dates = (
+      <div className={classes.Dates}>
+        <div className={classes.Container}>
+          <label>from: </label>
+          {from}
+        </div>
+
+        <div className={classes.Container}>
+          <label>to: </label>
+          {to}
+        </div>
+      </div>
+    );
+
+    return dates;
   };
 
   filterHandler = (event) => {
     event.preventDefault();
-    if (this.state.value !== "") {
-      this.props.filter(this.state.value);
-    }
-  };
-
-  onInputChangeHandler = (event) => {
-    let value = event.target.value.toString().trim();
-    let valueWithFormat;
-    console.log(value.length);
-    if (value.length !== 0) {
-      if (this.state.first || (value.length === 1 && value !== "{")) {
-        valueWithFormat = '{"' + value + '":""}'.trim();
-        this.setState({ value: valueWithFormat, first: false });
-      } else {
-        this.setState({ value: value });
-      }
-    } else {
-      valueWithFormat = "";
-      if (!this.state.first) {
-        this.setState({ value: valueWithFormat, first: true });
-        this.props.fetchOrders();
-      } else {
-        this.setState({ value: valueWithFormat });
-      }
-    }
+    const filter = {
+      hasFilter: true,
+      status: this.state.status.value,
+      from: this.state.from,
+      to: this.state.to,
+    };
+      this.props.filter(filter);
   };
 
   render() {
-    console.log("[Filter] render");
-    let placeholder = '{"filter" : "example"}';
-    return (
-      <div className={classes.Filterbar}>
-        <div className={classes.Filter}>
-          <div className={classes.Logo}>
-            <Logo label="FILTER" />
-          </div>
-          <div className={classes.Search}>
-            <input
-              onChange={this.onInputChangeHandler}
-              type="text"
-              placeholder={placeholder}
-              value={this.state.value}
-            />
-          </div>
-        </div>
-
+    const status = this.createStatus();
+    const dates = this.createDatePickers();
+    const res = (
+      <div className={classes.Filter}>
+        {status}
+        {dates}
         <Button
           title="Filter"
           color={Colors.GREEN}
           clicked={this.filterHandler}
         />
-
-        <Button
-          title="Reset"
-          color={Colors.LIGHTGREY}
-          clicked={this.resetFilter}
-        />
       </div>
     );
+    return res;
   }
 }
 

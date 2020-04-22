@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import classes from "./OrderForm.module.css";
 import {
-  createOrderControls,
-  controlsTypes,
-} from "../../../shared/Controls/controls";
+getCreateOrderControls, controlsTypes,
+} from "../../../shared/Controls/newOrder";
 import {
   checkValidity,
   createArrayFromObject,
@@ -12,6 +11,12 @@ import Input from "./Input/Input";
 import axios from "../../../axios/axios";
 
 export default class OrderForm extends Component {
+
+  state = {
+    controls: getCreateOrderControls(),
+    valid: false
+  };
+
   componentDidMount() {
     console.log("[OrderForm] componentDidMount");
   }
@@ -42,10 +47,7 @@ export default class OrderForm extends Component {
     this.setState({ controls: updated }, this.checkIfFormIsValid);
   };
 
-  state = {
-    controls: createOrderControls,
-    valid: false,
-  };
+ 
 
   createInputs = (controlType) => {
     let arrayControls = createArrayFromObject(this.state.controls);
@@ -87,12 +89,27 @@ export default class OrderForm extends Component {
     return address;
   };
 
-
+  submitHandler = (event) => {
+    const controls = {...this.state.controls};
+    const data = {
+      name: controls.FullName.value,
+      city: controls.City.value,
+      street: controls.Street.value,
+      streetNumber: controls.Number.value,
+      maskType: 'Disposable Facamask',
+      amount: controls.Amount.value,
+      communication: controls.Communication.value
+    };
+    const url = '/admin/order';
+    axios.post(url, data);
+  };
 
   createSubmitButton = () => {
-    const submit = <div className={classes.Submit}>
-        <button onClick={this.submitHandler}>שלח</button>
-    </div>;
+    const submit = (
+      <div className={classes.Submit}>
+        <button onClick={(event) => this.submitHandler(event)}>שלח</button>
+      </div>
+    );
     return submit;
   };
 
@@ -104,7 +121,7 @@ export default class OrderForm extends Component {
     const submit = this.createSubmitButton();
 
     const form = (
-        <form className={classes.OrderForm}>
+      <form className={classes.OrderForm}>
         {tilte}
         {fullName}
         {address}

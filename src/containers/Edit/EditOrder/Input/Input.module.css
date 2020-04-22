@@ -1,5 +1,6 @@
 .Input {
   padding: 5px;
+
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -9,25 +10,25 @@
 }
 
 .Select {
-  padding: 10px 5px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   font-family: "Comic Neue", cursive;
 }
 
 .Label {
-  /* margin: 0 auto; */
+
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
   font-size: 1rem;
   color: #111111;
-  padding-left: 5px;
+  padding: 5px 0;
 }
 
 .InputElement {
-  width: 200px;
   font-size: 0.8rem;
   text-align: start;
   height: 30px;
@@ -49,31 +50,27 @@
   font-weight: bold;
   border: 1px solid rgb(40, 40, 40);
   height: 30px;
-  margin-left: 25px;
   font-size: 0.9rem;
   border-radius: 10px;
   text-align: center;
-  padding-left: 22px;
 }
 
 .SelectElement:focus {
   outline: none;
 }
 
+
+
+
 .Invalid {
   border: 1px solid red;
   background-color: #fda49a;
 }
 
-
-
-
 @media (min-width: 550px) {
-
-.SelectElement {
-  font-size: 1rem;
-  margin-left: 13px;
-}
+  .SelectElement {
+    font-size: 1rem;
+  }
 
   .Label {
     margin-bottom: 8px;
@@ -86,8 +83,8 @@
   }
 
   .Select {
-    padding: 35px 5px;
+    align-items: flex-start;
+    margin-bottom: 10px ;
+    padding: 10px 5px;
   }
 }
-
-

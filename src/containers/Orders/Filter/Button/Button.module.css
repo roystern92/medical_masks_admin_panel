@@ -61,6 +61,18 @@
 }
 
 @media (min-width: 450px) {
+
+  .Button {
+    margin: 0 3px;
+    height: 30px;
+  }
+
+  .Button .Btn {
+    height: 90%;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+
 }
 
 @media (min-width: 700px) {

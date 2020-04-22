@@ -96,12 +96,11 @@ export const fetchOrders = (filter) => {
   return async (dispatch) => {
     try {
       console.log(filter);
-      let toFilter = !filter || filter.trim() === ""  ? 'false' : filter;
+      
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.getItem("token").toString();
-      const url = "/admin/orders/" + toFilter;
-      let res = await axios.get(url);
-
+      const url = "/admin/orders";
+      let res = await axios.post(url, filter);
       dispatch(adminOrders(res.data.orders));
     } catch (err) {
       dispatch(authFail(err.response.data.message));
