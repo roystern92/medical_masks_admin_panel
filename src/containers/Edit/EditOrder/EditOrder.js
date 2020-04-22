@@ -3,9 +3,9 @@ import {withRouter} from 'react-router-dom';
 import classes from "./EditOrder.module.css";
 import { connect } from "react-redux";
 import {
-  editOrderControls,
+  getEditOrderControls,
   controlsTypes,
-} from "../../../shared/Controls/controls";
+} from "../../../shared/Controls/editOrder";
 import {
   checkValidity,
   createArrayFromObject,
@@ -21,7 +21,7 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 class EditOrder extends Component {
   state = {
     loading: false,
-    controls: editOrderControls,
+    controls: getEditOrderControls(),
     valid: false,
     error: false,
   };

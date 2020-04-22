@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import classes from "./NewOrder.module.css";
-import axios from "axios";
 import Image from "../../components/UI/Image/Image";
 import OrderForm from "./OrderForm/OrderForm";
 
@@ -8,6 +7,11 @@ class NewOrder extends Component {
   state = {
     loading: false,
   };
+
+  componentDidMount() {
+    console.log("[NewOrder] cdm");
+  }
+  
 
   createSubTitles = () => {
     const res = (

@@ -1,100 +1,51 @@
-.Filterbar{
+
+.Filter{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  align-items: center;
-}
-
-.Filter {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  margin: 5% 0;
-  margin-left: 5%;
-  margin-right: 10px;
-  width: 62%;
-  border-radius: 10px;
-  height: 25px;
-  background-color: white;
-}
-
-.Valid{
-  background-color: white;
-}
-
-.Error input{
-  border: 1px solid red;
-  background-color: #fda49a;
-}
-
-.Filter .Logo {
-  display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 5%;
-  margin-right: 9px;
-}
-.Search{
-  width: 100%;
 }
 
-.Search input::placeholder {
-  color: rgb(190, 190, 190);
-}
-
-.Search input {
-  font-family: 'Comic Neue', cursive;
-  padding: 5px;
-  color: rgb(0, 0, 0);
-  font-size: 0.9rem;
+.Dates{
+  padding: 15px 5px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: start;
+}
+
+.Date{
+  height: 27px;
+  text-align: center;
+  padding: 0 5px;
+  font-family: "Comic Neue", cursive;
+  font-size: 1.1rem;
+  margin: 0 5px;
   font-weight: bold;
-  width: 100%;
-  outline: none;
-  border: none;
-  box-sizing: border-box;
 }
 
-.Search input:focus {
-  outline: none;
+.Container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Container label{
+  width: 40px;
+  text-align: end;
+  font-family: "Comic Neue", cursive;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 5px;
 }
 
 
-
-@media (min-width: 450px) {
- 
-}
-
-@media (min-width: 700px) {
-  .Filter {
-    margin: 5% 0;
-    margin-left: 5%;
-    margin-right: 10px;
-    width: 77%;
-    border-radius: 10px;
-    height: 35px;
-  }
-
-  .Filter .Logo {
-    margin-left: 5%;
-    margin-right: 9px;
-
-  }
-
-  .Search input {
-    font-size: 0.8rem;
-    width: 100%;
+@media (min-width: 800px) {
+  .Dates{
+    flex-direction: row;
   }
 }
 
-@media (min-width: 900px) {
-
-  .Search input {
-    font-size: 1.1rem;
-  }
-}
 

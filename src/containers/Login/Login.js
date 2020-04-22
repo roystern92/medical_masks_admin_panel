@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import classes from "./Login.module.css";
 import { checkValidity, createArrayFromObject } from "../../shared/Util/Util";
 import Title from "../../components/UI/Title/Title";
-import { apiAuthControl } from "../../shared/Controls/controls";
+import { getLoginControls } from "../../shared/Controls/login";
 import Colors from "../../shared/Colors/Colors";
 import Sizes from "../../shared/Sizes/Sizes";
 import Inputs from "../../components/UI/Inputs/Inputs";
@@ -14,7 +14,7 @@ import * as actions from "../../store/actions/index";
 
 class Login extends Component {
   state = {
-    controls: apiAuthControl,
+    controls: getLoginControls(),
     formIsValid: false,
     error: false,
   };
