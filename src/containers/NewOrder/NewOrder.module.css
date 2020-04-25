@@ -5,11 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   font-family: "Heebo", sans-serif;
 }
 
 .Title {
+  
   margin-top: 40px;
   width: 100%;
   text-align: center;
@@ -24,7 +25,7 @@
 }
 
 .Title h1 span {
-  color: rgb(98, 139, 165);
+  color: rgb(91, 130, 155);
 }
 
 .NewOrder .Line {
@@ -86,7 +87,6 @@
 
 .Body .Test {
   width: 100%;
-  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -127,15 +127,14 @@
   position: absolute;
   left: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 .MaskPicture img {
   top: 0;
   position: absolute;
-  left: 0;
-  padding-left: 20px;
   transform: rotate(52deg);
+  margin-left: 25px;
+  margin-top: 20px;
   max-width: 80%;
 }
 
@@ -215,13 +214,13 @@
 
   .MaskPicture img {
     max-width: 100%;
-    padding-left: 40%;
-    left: -25px;
+    /* padding-left: 40%; */
+    /* left: -25px; */
     top: 29px;
   }
 
   .OrderForm {
-    width: 80%;
+    width: 70%;
   }
 }
 
@@ -244,7 +243,6 @@
   }
 
   .Body .Test {
-    margin-top: 30px;
     margin-bottom: 50px;
   }
   .MaskItemInfo h4 {
@@ -258,8 +256,6 @@
     width: 13px;
   }
 
- 
-
 
   .MaskPicture {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -267,9 +263,13 @@
 
   .MaskPicture img {
     max-width: 120%;
-    padding-left: 40%;
-    left: -30px;
+    /* padding-left: 40%; */
+    left: 0;
     top: 20px;
+  }
+
+  .OrderForm {
+    width: 270px;
   }
 
 
@@ -322,7 +322,6 @@
   }
 
   .Body .Test {
-    margin-top: 5px;
     margin-bottom: 40px;
   }
   .MaskItemInfo h4 {
@@ -343,13 +342,13 @@
 
   .MaskPicture img {
     max-width: auto;
-    padding-left: 40%;
-    left: -30px;
+    /* padding-left: 40%; */
+    /* left: -30px; */
     top: 0;
   }
 
   .OrderForm {
-    width: 70%;
+    width: 280px;
   }
 }
 
@@ -372,7 +371,7 @@
   }
 
   .MaskItemInfo h4 {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 
   .MaskItemInfo img {
@@ -381,12 +380,15 @@
     width: 28px;
   }
   .MaskPicture {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 
   .MaskPicture img {
     max-width: auto;
     padding: 0 30%;
+    margin-left: 0;
+    margin-top: 25px;
+    left: -20px;
   }
 
   .Middle {
@@ -394,6 +396,9 @@
     margin-bottom: 40px;
   }
 
+  .OrderForm {
+    width: 370px;
+  }
 }
 
 
@@ -603,6 +608,15 @@
 }
 
 @media (min-width: 1050px) {
+
+  .NewOrder .SubTitles h1 {
+    font-size: 2.3rem;
+  }
+
+  .NewOrder .SubTitles h3 {
+    font-size: 1.6rem;
+  }
+  
  
 
   .MaskItemInfo h4 {
@@ -619,23 +633,41 @@
 
 @media (min-width: 1250px) {
 
+  
   .NewOrder .Title h1 {
     font-size: 5.2rem;
   }
 
+  .NewOrder .SubTitles h1 {
+    font-size: 2.8rem;
+  }
 
+  .NewOrder .SubTitles h3 {
+    font-size: 2rem;
+  }
+  
+  
   .MaskItemInfo img {
     margin: 0 35px;
     height: 60px;
     width: 60px;
   }
+  
+  .MaskInfo{
+    margin-right: 30px;
+  }
+
 
   .MaskItemInfo h4 {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
   }
 
   .MaskPicture {
     grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+  }
+
+  .MaskPicture img {
+    padding: 0 40%;
   }
 
   .Body .Test {
@@ -649,12 +681,105 @@
   .OrderForm {
     width: 510px;
   }
+
+  .Middle {
+    margin: 30px 0;
+  }
 }
 
 
-@media (min-width: 1350px) {
+@media (min-width: 1370px) {
+
+
+  .NewOrder .Title .Line {
+    height: 18px;
+  }
+
+  .NewOrder .Title h1 {
+    font-size: 6rem;
+  }
+  
+  
+  .MaskItemInfo img {
+    margin: 0 40px;
+    height: 60px;
+    width: 60px;
+  }
+  
+
+  .MaskItemInfo h4 {
+    font-size: 2.6rem;
+    margin: 15px 0;
+  }
+
   .MaskPicture {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
+
+  .MaskInfo{
+    margin-right: 4%;
+  }
+
 }
+
+@media (min-width: 1500px) {
+
+
+  .NewOrder .Title h1 {
+    font-size: 6.2rem;
+  }
+  
+  
+  .MaskItemInfo img {
+    margin: 0 40px;
+    height: 70px;
+    width: 70px;
+  }
+  
+
+  .MaskItemInfo h4 {
+    font-size: 2.9rem;
+    margin: 15px 0;
+  }
+
+
+  .MaskPicture {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+
+  .MaskInfo{
+    margin-right: 6%;
+  }
+
+}
+
+@media (min-width: 1700px) {
+
+  .MaskPicture {
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+  }
+
+  .MaskPicture img {
+    padding: 0 60%;
+  transform: rotate(40deg);
+  }
+
+  .MaskInfo{
+    margin-right: 9%;
+  }
+
+  .Middle {
+    margin: 50px 0;
+  }
+
+  .SubTitles {
+    width: 560px;
+  }
+
+  .OrderForm {
+    width: 540px;
+  }
+
+}
+
 

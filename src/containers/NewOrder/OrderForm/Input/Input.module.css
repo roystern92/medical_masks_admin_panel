@@ -11,24 +11,24 @@
 
 
 .InputElement {
+  border: 2px solid rgb(91, 130, 155);
+  border-radius: 10px;
+  padding: 0 6px;
   width: 100%;
-  font-family: "Heebo", sans-serif;
   font-size: 0.7rem;
-font-weight: bold;
-  text-align: end;
+  font-weight: 400;
+  font-family: "Heebo", sans-serif;
+  text-align: start;
   outline: none;
   border: none;
-  border: 2px solid rgb(91, 130, 155);
-  padding: 0 6px;
   display: block;
   box-sizing: border-box;
-  border-radius: 10px;
 }
 
 .InputElement::placeholder {
   font-family: "Heebo", sans-serif;
-  font-size: 0.7rem;
   text-align: center;
+  font-size: 0.7rem;
   font-weight: 400;
 }
 
@@ -46,49 +46,34 @@ font-weight: bold;
   }
 
   .InputElement {
+    border: 2px solid rgb(91, 130, 155);
     font-size: 0.9rem;
     height: 20px;
-    border: 2px solid rgb(91, 130, 155);
-    padding: 0 6px;
-    border-radius: 10px;
   }
 }  
 @media (min-width: 250px) {
   .InputElement {
     font-size: 0.9rem;
     height: 30px;
-    border: 2px solid rgb(91, 130, 155);
-    padding: 0 6px;
-    border-radius: 10px;
   }
 }  
 
 @media (min-width: 400px) {
   .InputElement {
-    font-size: 0.9rem;
     height: 40px;
-    padding: 0 6px;
-    border-radius: 10px;
   }
   .InputElement::placeholder {
-    font-family: "Heebo", sans-serif;
-    font-size: 0.8rem;
-    text-align: center;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 550px) {
   .InputElement {
-    font-size: 0.9rem;
     height: 50px;
-    padding: 0 6px;
-    border-radius: 10px;
   }
 
   .InputElement::placeholder {
-    font-family: "Heebo", sans-serif;
-    font-size: 0.9rem;
-    text-align: center;
+    font-size: 1.1rem;
   }
 }
 
@@ -97,19 +82,32 @@ font-weight: bold;
 @media (min-width: 700px) {
   .InputElement {
     font-size: 1.1rem;
-    font-weight: 400;
     height: 60px;
     padding: 0 6px;
     border-radius: 10px;
   }
 
   .InputElement::placeholder {
-    font-family: "Heebo", sans-serif;
     font-size: 1.1rem;
     text-align: center;
   }
 
 }
 
+
+@media (min-width: 1250px) {
+  .Input{
+    margin: 15px 3px;
+  }
+  .InputElement {
+    font-size: 1.4rem;
+    height: 60px;
+  }
+
+  .InputElement::placeholder {
+    font-size: 1.4rem;
+  }
+
+}
 
 

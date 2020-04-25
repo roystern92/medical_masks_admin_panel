@@ -21,6 +21,23 @@ export const getCreateOrderControls = () => {
         valid: false,
         touched: false,
       },
+
+
+      City: {
+        type: controlsTypes.ADDRESS,
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "עיר",
+        },
+        value: "",
+        validation: {
+          required: true,
+        },
+        valid: false,
+        touched: false,
+      },
+      
       Street: {
         type: controlsTypes.ADDRESS,
         elementType: "input",
@@ -36,20 +53,6 @@ export const getCreateOrderControls = () => {
         touched: false,
       },
     
-      City: {
-        type: controlsTypes.ADDRESS,
-        elementType: "input",
-        elementConfig: {
-          type: "text",
-          placeholder: "עיר",
-        },
-        value: "",
-        validation: {
-          required: true,
-        },
-        valid: false,
-        touched: false,
-      },
     
       Amount: {
         type: controlsTypes.COMMUNICATION,

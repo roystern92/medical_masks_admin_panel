@@ -10,11 +10,13 @@ import {
 } from "../../../shared/Util/Util";
 import Input from "./Input/Input";
 import axios from "../../../axios/axios";
+import Spinner from '../../../components/UI/Spinner/Spinner';
 
 export default class OrderForm extends Component {
   state = {
     controls: getCreateOrderControls(),
     valid: false,
+    loading: false
   };
 
   componentDidMount() {
@@ -104,15 +106,20 @@ export default class OrderForm extends Component {
       };
       console.log(data);
       const url = "/admin/order";
-      try{
-        axios.post(url, data);
+        this.setState({loading: true}, async () => {
+          try{
+            await axios.post(url, data);
+            window.location.reload();
+          }
+          catch(err){
+            console.log(err);
+          }
+        });
+    
 
       }
-      catch(err){
-        console.log(err);
-      }
+    
     }
-  };
 
   createSubmitButton = () => {
     const submit = (
@@ -130,7 +137,7 @@ export default class OrderForm extends Component {
     const tilte = <h1>להזמנה ופרטים נוספים</h1>;
     const submit = this.createSubmitButton();
 
-    const form = (
+    const form = this.state.loading ? <Spinner/> : (
       <form className={classes.OrderForm}>
         {tilte}
         {fullName}

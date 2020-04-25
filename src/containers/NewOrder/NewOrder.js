@@ -3,6 +3,7 @@ import classes from "./NewOrder.module.css";
 import Image from "../../components/UI/Image/Image";
 import OrderForm from "./OrderForm/OrderForm";
 
+
 class NewOrder extends Component {
   state = {
     loading: false,
