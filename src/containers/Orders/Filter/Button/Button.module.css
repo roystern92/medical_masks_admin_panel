@@ -16,29 +16,14 @@
 }
 
 .LightGrey .Btn {
-  background: #ada996; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #ada996,
-    #f2f2f2,
-    #dbdbdb,
-    #eaeaea
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #ada996,
-    #f2f2f2,
-    #dbdbdb,
-    #eaeaea
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  box-shadow: 1px 1px 1px 1px rgb(100, 100, 100);
-  color: black;
+  background: #747370; /* fallback for old browsers */
+  color: white;
 }
 
 .Button {
   margin: 0 3px;
   padding: 0 10px;
-  height: 27px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,8 +31,8 @@
 
 .Button .Btn {
   font-family: 'Comic Neue', cursive;
-  height: 90%;
-  font-size: 10px;
+  height: 100%;
+  font-size: 1.2rem;
   margin: 0 auto;
   outline: none;
   border: none;
@@ -62,13 +47,8 @@
 
 @media (min-width: 450px) {
 
-  .Button {
-    margin: 0 3px;
-    height: 30px;
-  }
-
+ 
   .Button .Btn {
-    height: 90%;
     font-size: 20px;
     margin: 0 auto;
   }
@@ -82,7 +62,6 @@
   }
 
   .Button .Btn {
-    height: 90%;
     font-size: 20px;
     margin: 0 auto;
   }

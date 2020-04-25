@@ -2,14 +2,15 @@
   background-color: white;
   padding: 5px 0;
   display: flex;
-  margin: 10px 10%;
+  margin: 15px 5%;
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
   border: 3px solid #444444;
   border-radius: 5px;
   box-shadow: 0 0 2px 2px rgb(190, 189, 180);
-  width: 80%;
+  width: 90%;
+
 }
 
 .EditButton{
@@ -21,6 +22,7 @@
 
 @media (min-width: 450px) {
   .OrderSummery {
+
   }
 }
 

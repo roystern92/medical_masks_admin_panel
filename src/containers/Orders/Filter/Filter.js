@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import classes from "./Filter.module.css";
-import Button from "./Button/Button";
-import Colors from "../../../shared/Colors/Colors";
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import Input from "../../Edit/EditOrder/Input/Input";
@@ -15,12 +13,13 @@ class Filter extends Component {
       elementType: "select",
       elementConfig: {
         options: [
-          { value: "open", displayValue: "Open" },
-          { value: "process", displayValue: "Process" },
-          { value: "closed", displayValue: "Closed" },
+          { value: "all", displayValue: "ALL" },
+          { value: "open", displayValue: "OPEN" },
+          { value: "process", displayValue: "PROCESS" },
+          { value: "closed", displayValue: "CLOSED" }
         ],
       },
-      value: 'open'
+      value: 'all'
     },
 
     from: new Date(),
@@ -61,7 +60,7 @@ class Filter extends Component {
         className={classes.Date}
         selected={this.state.from}
         onChange={(date) => this.onDateChange("from", date)}
-        showTimeSelect
+        
       />
     );
 
@@ -70,12 +69,21 @@ class Filter extends Component {
         className={classes.Date}
         selected={this.state.to}
         onChange={(date) => this.onDateChange("to", date)}
-        showTimeSelect
       />
     );
 
+
+    const status = this.createStatus();
+
+
     const dates = (
       <div className={classes.Dates}>
+
+        <div className={classes.Container}>
+          <label>status: </label>
+          {status}
+        </div>
+
         <div className={classes.Container}>
           <label>from: </label>
           {from}
@@ -84,6 +92,10 @@ class Filter extends Component {
         <div className={classes.Container}>
           <label>to: </label>
           {to}
+        </div>
+
+        <div className={classes.Search}>
+          <button onClick={this.filterHandler}>Search</button>
         </div>
       </div>
     );
@@ -103,17 +115,11 @@ class Filter extends Component {
   };
 
   render() {
-    const status = this.createStatus();
     const dates = this.createDatePickers();
     const res = (
       <div className={classes.Filter}>
-        {status}
         {dates}
-        <Button
-          title="Filter"
-          color={Colors.GREEN}
-          clicked={this.filterHandler}
-        />
+      
       </div>
     );
     return res;

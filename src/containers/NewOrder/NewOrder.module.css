@@ -195,29 +195,37 @@
  
   .NewOrder .Title h1 {
     font-weight: bold;
+    font-size: 1rem;
   }
 
   .MaskItemInfo h4 {
-    font-size: 7px;
+    font-size: 6px;
     margin: 6px 0;
   }
 
   .MaskItemInfo img {
-    margin: 0 3px;
-    height: 5px;
-    width: 5px;
+    margin: 0 8px;
+    height: 10px;
+    width: 10px;
+  }
+
+  .MaskPicture {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   }
 
   .MaskPicture img {
-    max-width: 40%;
-    top: 45px;
-    left: 0px;
+    max-width: 100%;
+    padding-left: 40%;
+    left: -25px;
+    top: 29px;
   }
 
   .OrderForm {
-    width: 70%;
+    width: 80%;
   }
 }
+
+
 
 @media (min-width: 360px) {
   /* iphone 5 */
@@ -250,11 +258,21 @@
     width: 13px;
   }
 
+ 
+
+
+  .MaskPicture {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
   .MaskPicture img {
     max-width: 120%;
-    top: 45px;
-    left: 15px;
+    padding-left: 40%;
+    left: -30px;
+    top: 20px;
   }
+
+
 }
 
 @media (min-width: 400px) {
@@ -331,7 +349,7 @@
   }
 
   .OrderForm {
-    width: 50%;
+    width: 70%;
   }
 }
 

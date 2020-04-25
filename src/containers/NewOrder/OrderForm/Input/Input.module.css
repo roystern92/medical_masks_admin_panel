@@ -40,9 +40,23 @@ font-weight: bold;
 }
 
 @media (min-width: 170px) {
+
+  .Input{
+    margin: 3px 0;
+  }
+
   .InputElement {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     height: 20px;
+    border: 2px solid rgb(91, 130, 155);
+    padding: 0 6px;
+    border-radius: 10px;
+  }
+}  
+@media (min-width: 250px) {
+  .InputElement {
+    font-size: 0.9rem;
+    height: 30px;
     border: 2px solid rgb(91, 130, 155);
     padding: 0 6px;
     border-radius: 10px;
@@ -58,7 +72,7 @@ font-weight: bold;
   }
   .InputElement::placeholder {
     font-family: "Heebo", sans-serif;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     text-align: center;
   }
 }
@@ -91,7 +105,7 @@ font-weight: bold;
 
   .InputElement::placeholder {
     font-family: "Heebo", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-align: center;
   }
 

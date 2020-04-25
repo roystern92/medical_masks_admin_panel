@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import classes from "./OrderForm.module.css";
 import {
-getCreateOrderControls, controlsTypes,
+  getCreateOrderControls,
+  controlsTypes,
 } from "../../../shared/Controls/newOrder";
 import {
   checkValidity,
@@ -11,10 +12,9 @@ import Input from "./Input/Input";
 import axios from "../../../axios/axios";
 
 export default class OrderForm extends Component {
-
   state = {
     controls: getCreateOrderControls(),
-    valid: false
+    valid: false,
   };
 
   componentDidMount() {
@@ -46,8 +46,6 @@ export default class OrderForm extends Component {
 
     this.setState({ controls: updated }, this.checkIfFormIsValid);
   };
-
- 
 
   createInputs = (controlType) => {
     let arrayControls = createArrayFromObject(this.state.controls);
@@ -89,19 +87,31 @@ export default class OrderForm extends Component {
     return address;
   };
 
-  submitHandler = (event) => {
-    const controls = {...this.state.controls};
-    const data = {
-      name: controls.FullName.value,
-      city: controls.City.value,
-      street: controls.Street.value,
-      streetNumber: controls.Number.value,
-      maskType: 'Disposable Facamask',
-      amount: controls.Amount.value,
-      communication: controls.Communication.value
-    };
-    const url = '/admin/order';
-    axios.post(url, data);
+  submitHandler = async (event) => {
+    event.preventDefault();
+    const controls = { ...this.state.controls };
+    console.log(this.state);
+    if (this.state.valid) {
+      let streetNumber = controls.Street.value.split(" ").length === 2 ?  controls.Street.value.split(" ")[1] : ' '; 
+      const data = {
+        name: controls.FullName.value,
+        city: controls.City.value,
+        street: controls.Street.value,
+        streetNumber: streetNumber,
+        maskType: "Disposable Facamask",
+        amount: controls.Amount.value,
+        communication: controls.Communication.value,
+      };
+      console.log(data);
+      const url = "/admin/order";
+      try{
+        axios.post(url, data);
+
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
   };
 
   createSubmitButton = () => {

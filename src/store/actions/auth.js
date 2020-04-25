@@ -96,7 +96,6 @@ export const fetchOrders = (filter) => {
   return async (dispatch) => {
     try {
       console.log(filter);
-      
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.getItem("token").toString();
       const url = "/admin/orders";

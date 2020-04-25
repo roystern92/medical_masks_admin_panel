@@ -1,17 +1,11 @@
-.Label{
-    text-align: start;
-    width: 95px;
-    margin-right: 10px;
-    font-size: 1rem;
+.Label {
+  text-align: start;
+  width: 120px;
 }
 
-.Label label{
-    font-family: 'Comic Neue', cursive;
-    font-weight: bold;
+.Label label {
+  font-family: "Secular One", sans-serif;
+  font-size: 1.2rem;
 }
 
-@media (min-width: 700px) {
-    .Label label{
-    font-size: 1.1rem;
-    }
-}
+

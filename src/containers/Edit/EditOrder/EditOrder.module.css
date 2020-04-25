@@ -20,6 +20,13 @@
   justify-content: center;
   align-items: center;
 }
+.Communication{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .AddressInputs {
   display: flex;
@@ -32,14 +39,35 @@
   display: none;
 }
 
-.Submit {
-  margin: 10px;
+
+.Status select{
+  width: 181px;
+  font-weight: 400;
+}
+
+.Submit{
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  margin: 10px 0;
 }
+
+.Submit button {
+  height: 32px;
+  width: 80px;
+  border: none;
+  /* background-color: rgb(108, 160, 73); */
+  background: rgb(108, 160, 83);  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, rgb(100, 150, 73), #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgb(93, 142, 68), rgb(90, 142, 65)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Comic Neue", cursive;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+
 
 @media (min-width: 700px) {
   .PersonalDetails {
@@ -75,17 +103,39 @@
     width: 68%;
   }
 
-  .Submit {
-    margin: 20px;
+  .Submit{
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
   }
+
+  .Submit button {
+    height: 32px;
+    width: 140px;
+    border: none;
+    /* background-color: rgb(108, 160, 73); */
+    background: rgb(108, 160, 83);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgb(100, 150, 73), #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgb(93, 142, 68), rgb(90, 142, 65)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "Comic Neue", cursive;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+
 
   .Status {
     width: 100%;
+  }
+
+  .Status select{
+    margin-left: 3px;
+  }
+
+  .Status label{
+    margin-left: 3px;
   }
 }
 

@@ -1,51 +1,131 @@
-
-.Filter{
-  width: 100%;
+.Filter {
+  width: 80%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin: 20px 0;
+  margin: 0 10%;
 }
 
-.Dates{
+.Dates {
+  width: 100%;
   padding: 15px 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.Date{
-  height: 27px;
+.Dates select {
+  width: 226px;
+  background-color: rgb(20, 63, 104);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 1px solid #111111;
+}
+
+.Date {
+  background-color: rgb(20, 63, 104);
+  color: white;
+  width: 220px;
+  height: 30px;
   text-align: center;
-  padding: 0 5px;
+  padding: 0 2px;
   font-family: "Comic Neue", cursive;
   font-size: 1.1rem;
   margin: 0 5px;
   font-weight: bold;
+  border: 1px solid #111111;
+  margin: 2px 0;
+  border-radius: 10px;
 }
 
-.Container{
+.Container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  height: 55px;
 }
 
-.Container label{
-  width: 40px;
-  text-align: end;
+.Container label {
+  width: 55px;
+  text-align: start;
   font-family: "Comic Neue", cursive;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 5px;
 }
 
+.Calender {
+  background-color: red;
+}
 
-@media (min-width: 800px) {
-  .Dates{
-    flex-direction: row;
-  }
+.Search {
+  width: 100%;
+}
+
+.Search button {
+  height: 32px;
+  width: 291px;
+  border: none;
+  /* background-color: rgb(108, 160, 73); */
+  background: rgb(108, 160, 83);  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, rgb(100, 150, 73), #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgb(93, 142, 68), rgb(90, 142, 65)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Comic Neue", cursive;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 5px 0;
 }
 
 
+
+@media (min-width: 950px){
+  .Dates {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .Filter {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .Date {
+    width: 100px;
+  }
+
+  .Dates select {
+    width: 106px;
+  }
+
+  .Container {
+    width: auto;
+    margin: 0 5px;
+  }
+
+  .Container label {
+    width: auto;
+    text-align: start;
+    font-size: 1.2rem;
+    padding: 5px 5px;
+  }
+
+  .Search {
+    width: auto;
+  }
+
+  .Search button {
+    width: 106px;
+    font-size: 1.2rem;
+    margin-left: 15px;
+  }
+}

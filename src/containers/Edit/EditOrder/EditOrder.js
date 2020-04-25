@@ -135,12 +135,13 @@ class EditOrder extends Component {
       controls.Number.value
     );
     const fullName = controls.FirstName.value + " " + controls.LastName.value;
-    console.log(status);
-    const data = new FormData();
-    data.append("addressJson", JSON.stringify(address));
-    data.append("statusJson", JSON.stringify(status));
-    data.append("name", fullName);
-    data.append("communication", controls.Communication.value);
+    const data = {
+      address: address,
+      name: fullName,
+      communication:controls.Communication.value,
+      status: status
+    };
+    console.log(data);
     return data;
   };
 
@@ -173,17 +174,16 @@ class EditOrder extends Component {
     }
   };
 
-  getSubmitButton = () => {
-    return (
-      <div className={classes.Submit}>
-        <Button
-          title="Save"
-          color={Colors.GREEN}
-          clicked={this.submitHandler}
-        />
-      </div>
-    );
-  };
+
+      getSubmitButton = () => {
+        const submit = (
+          <div className={classes.Submit}>
+            <button onClick={(event) => this.submitHandler(event)}>Save</button>
+          </div>
+        );
+        return submit;
+      };
+    
 
   getInputsWithDifftentTypesCombined = (
     arrayControls,
@@ -235,7 +235,7 @@ class EditOrder extends Component {
     const communication = this.getInputs(
       arrayControls,
       controlsTypes.COMMUNICATION,
-      classes.PersonalDetails
+      classes.Communication
     );
     const submit = this.getSubmitButton();
 

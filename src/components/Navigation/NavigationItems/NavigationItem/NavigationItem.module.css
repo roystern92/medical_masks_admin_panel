@@ -34,7 +34,7 @@
   .NavigationItem a:hover {
     color: white;
   }
-  
+
   @media (min-width: 700px) {
     .NavigationItem {
       box-sizing: border-box;
@@ -72,4 +72,3 @@
       color: black;
     }
   }
-  

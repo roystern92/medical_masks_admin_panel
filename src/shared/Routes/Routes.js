@@ -29,7 +29,7 @@ class Routes extends Component {
           <Route path={ORDERS_ROUTE} exact component={Orders} />
           <Route path={LOGOUT_ROUTE} exact component={Logout} />
           <Route path={ EDIT_ROUTE} exact component={Edit} />
-          <Redirect to={ORDERS_ROUTE} />
+          <Redirect to={NEWORDER_ROUTE} />
         </Switch>
       );
     } else {

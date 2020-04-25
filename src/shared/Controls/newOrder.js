@@ -21,27 +21,12 @@ export const getCreateOrderControls = () => {
         valid: false,
         touched: false,
       },
-    
-      Number: {
-        type: controlsTypes.ADDRESS,
-        elementType: "input",
-        elementConfig: {
-          type: "text",
-          placeholder: "מספר בית",
-        },
-        value: "",
-        validation: {
-          required: false,
-        },
-        valid: false,
-        touched: false,
-      },
       Street: {
         type: controlsTypes.ADDRESS,
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "רחוב",
+          placeholder: "רחוב + מספר בית",
         },
         value: "",
         validation: {

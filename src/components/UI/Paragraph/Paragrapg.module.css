@@ -1,50 +1,41 @@
-.Paragraph{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.Paragraph {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.Red p{
-    color: red;
+.Red p {
+  color: red;
 }
 
-.Blue p{
-    color: blue;
-
+.Blue p {
+  color: blue;
 }
 
-.Black p{
-    color: rgb(60, 60, 60);
+.Black p {
+  color: rgb(60, 60, 60);
 }
 
-.Green p{
-    color: green;
+.Green p {
+  color: green;
 }
 
-.Orange p{
-    color: orange;
+.Orange p {
+  color: orange;
 }
 
-.Purple p{
-    color: rgb(110, 100 ,180);
+.Purple p {
+  color: rgb(110, 100, 180);
+}
+
+.Paragraph p {
+  margin: 0;
+  font-family: "Secular One", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  
 }
 
 
-.Paragraph p{
-    margin: 0;
-    font-family: 'David Libre', serif;
-    font-weight: bold;
-    font-size: 1rem;
-}
 
-
-@media (min-width: 450px) {
-}
-
-@media (min-width: 700px) {
-    .Paragraph p{
-    margin: 0 20px;
-    font-size: 1.1rem;
-    }
-}

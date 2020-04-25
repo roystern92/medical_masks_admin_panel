@@ -42,7 +42,7 @@ class NewOrder extends Component {
   createInfo = (info) => {
     const icon = <Image name="bullet.png" />;
     const res = (
-      <div className={classes.MaskItemInfo}>
+      <div key={info + new Date()} className={classes.MaskItemInfo}>
         <h4>{info}</h4>
         {icon}
       </div>
