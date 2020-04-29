@@ -24,9 +24,6 @@ class NavigationItems extends Component {
         <NavigationItem link="/login" exact>
           Login
         </NavigationItem>
-        <NavigationItem link="/new-order" exact>
-          New Order
-        </NavigationItem>
       </ul>
     }
 

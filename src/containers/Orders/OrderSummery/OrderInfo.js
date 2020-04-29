@@ -62,14 +62,11 @@ class OrderInfo extends Component {
     // I reduce 3 hourse cuz israel local time is 3 hours later than the time of the timestemp of the server.
     createAt.setHours(createAt.getHours() - 3);
     createAt = createAt.toLocaleString();
-    // console.log(new Date(order.createdAt).);
-    console.log('#######################')
     let res = [
       status,
       { label: "name", content: order.name, color: Colors.BLUE, id: order._id },
       { label: "createdAt", content: createAt, color: Colors.BLACK, id: order._id }
     ];
-
 
     if(this.state.showInfo){
       const address = order.address.street + " " + order.address.number + ", " + order.address.city ;
@@ -78,7 +75,6 @@ class OrderInfo extends Component {
         { label: "name", content: order.name, color: Colors.BLUE, id: order._id },
         { label: "mask type", content: order.masks.maskType, color: Colors.PURPLE, id: order._id },
         { label: "amount", content: order.masks.amount, color: Colors.PURPLE, id: order._id },
-        { label: "totalPrice", content: order.totalPrice, color: Colors.PURPLE, id: order._id },
         { label: "address", content: address, color: Colors.PURPLE, id: order._id },
         { label: "contact", content: order.communication, color: Colors.PURPLE, id: order._id },
         { label: "createdAt", content: createAt, color: Colors.BLACK, id: order._id },

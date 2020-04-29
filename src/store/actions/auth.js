@@ -75,7 +75,7 @@ export const postAuth = async (formData, url, dispatch) => {
   } catch (e) {
     console.log("Error while trying to login.");
     console.log(e.response);
-    dispatch(authFail(e.response.data.message));
+    dispatch(authFail(e.response));
   }
 };
 

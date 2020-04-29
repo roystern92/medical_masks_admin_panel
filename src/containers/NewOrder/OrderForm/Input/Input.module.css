@@ -10,11 +10,34 @@
 }
 
 
+
+
+.Input select{
+  width: 100%;
+  height: 40px;
+  border: 2px solid rgb(91, 130, 155);
+  background-color: white;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgb(106, 106, 106);
+  font-family: "Heebo", sans-serif;
+  text-align: end;
+  outline: none;
+  border: none;
+  display: block;
+  box-sizing: border-box;
+}
+
+
+
+
 .InputElement {
+  width: 100%;
   border: 2px solid rgb(91, 130, 155);
   border-radius: 10px;
   padding: 0 6px;
-  width: 100%;
   font-size: 0.7rem;
   font-weight: 400;
   font-family: "Heebo", sans-serif;
@@ -27,7 +50,7 @@
 
 .InputElement::placeholder {
   font-family: "Heebo", sans-serif;
-  text-align: center;
+  text-align: start;
   font-size: 0.7rem;
   font-weight: 400;
 }
@@ -42,19 +65,46 @@
 @media (min-width: 170px) {
 
   .Input{
-    margin: 3px 0;
+    margin: 1px 0;
   }
 
   .InputElement {
     border: 2px solid rgb(91, 130, 155);
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     height: 20px;
   }
+
+
+.Input select{
+  height: 20px;
+  border: 2px solid rgb(91, 130, 155);
+  font-size: 0.7rem;
+
+  
+}
+
+
 }  
 @media (min-width: 250px) {
   .InputElement {
-    font-size: 0.9rem;
     height: 30px;
+  }
+
+  .Input select{
+    height: 30px;
+  }
+}  
+@media (min-width: 350px) {
+  .InputElement {
+    height: 40px;
+  }
+
+  .InputElement::placeholder {
+    font-size: 1rem;
+  }
+  .Input select{
+    height: 40px;
+    font-size: 1rem;
   }
 }  
 
@@ -65,6 +115,10 @@
   .InputElement::placeholder {
     font-size: 1rem;
   }
+  .Input select{
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 550px) {
@@ -73,6 +127,11 @@
   }
 
   .InputElement::placeholder {
+    font-size: 1.1rem;
+  }
+
+  .Input select{
+    height: 50px;
     font-size: 1.1rem;
   }
 }
@@ -89,7 +148,11 @@
 
   .InputElement::placeholder {
     font-size: 1.1rem;
-    text-align: center;
+  }
+
+  .Input select{
+    height: 60px;
+    font-size: 1.1rem;
   }
 
 }
@@ -102,6 +165,11 @@
   .InputElement {
     font-size: 1.4rem;
     height: 60px;
+  }
+
+  .Input select{
+    height: 60px;
+    font-size: 1.4rem;
   }
 
   .InputElement::placeholder {

@@ -24,7 +24,7 @@ class Orders extends Component {
   createOrders = () => {
     let res = null;
     if (this.props.orders) {
-      let orders = this.props.orders.map((order) => {
+      let orders = this.props.orders.reverse().map((order) => {
         return <OrderSummery edit={this.editHandler} order={order} key={order._id} />
       });
 

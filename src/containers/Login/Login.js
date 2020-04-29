@@ -6,8 +6,10 @@ import { getLoginControls } from "../../shared/Controls/login";
 import Colors from "../../shared/Colors/Colors";
 import Sizes from "../../shared/Sizes/Sizes";
 import Inputs from "../../components/UI/Inputs/Inputs";
-
+import Spinner from '../../components/UI/Spinner/Spinner';
 import Button from "../../components/UI/Button/Button";
+import axios from '../../axios/axios';
+import withErrorHandler from  '../withErrorHandler/withErrorHandler';
 
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
@@ -17,10 +19,11 @@ class Login extends Component {
     controls: getLoginControls(),
     formIsValid: false,
     error: false,
+    loading: false
   };
 
   componentDidMount() {
-    console.log("[Login] componentDidMount");
+    // console.log("[Login] componentDidMount");
   }
 
   checkIfFormIsValid = () => {
@@ -64,8 +67,8 @@ class Login extends Component {
 
   submitHandler = (event) => {
     event.preventDefault();
-    this.props.onAuth("roystern92@gmail.com", "roystern92");
-    console.log("Clicked on login");
+    const {Email, Password} = this.state.controls;
+    this.props.onAuth(Email.value, Password.value);
   };
 
   createForm = (elements) => {
@@ -94,11 +97,17 @@ class Login extends Component {
   };
 
   render() {
-    console.log("[Login] render");
+    // console.log("[Login] render");
     let elements = createArrayFromObject(this.state.controls);
     let form = this.createForm(elements);
+    const login = this.props.loading ? 
+    <div className={classes.Downloader}>
+      {form}
+      <Spinner />
+      </div> : 
+      <div className={classes.Downloader}>{form}</div>;
 
-    return <div className={classes.Downloader}>{form}</div>;
+    return login;
   }
 }
 
@@ -117,4 +126,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStatesToProps, mapDispatchToProps)(Login);
+export default connect(mapStatesToProps, mapDispatchToProps)(withErrorHandler(Login, axios));

@@ -2,7 +2,7 @@ import * as actionTypes from "../actions/actionTypes";
 import { updateObject } from "../../shared/Util/Util";
 
 const initialState = {
-  loading: null,
+  loading: false,
   token: null,
   error: null,
   orders: null,
@@ -26,7 +26,7 @@ const authStart = (state, action) => {
 };
 
 const authFail = (state, action) => {
-  return updateObject(state, { error: action.error, orders: null });
+  return updateObject(state, { error: action.error, orders: null, loading: false });
 };
 
 const authSuccess = (state, action) => {

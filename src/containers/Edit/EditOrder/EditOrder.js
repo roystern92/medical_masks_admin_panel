@@ -27,7 +27,7 @@ class EditOrder extends Component {
   };
 
   componentDidMount() {
-    console.log("[EditOrder] componentDidMount");
+    // console.log("[EditOrder] componentDidMount");
     if (this.props.OrderToEdit) {
       this.setControlsWithOrderValues();
     }
@@ -141,23 +141,23 @@ class EditOrder extends Component {
       communication:controls.Communication.value,
       status: status
     };
-    console.log(data);
+    // console.log(data);
     return data;
   };
 
   saveChanges = async () => {
     try {
-      console.log("Before editing....");
+      // console.log("Before editing....");
       const url = "/admin/order/edit/" + this.props.OrderToEdit._id;
-      console.log(url);
+      // console.log(url);
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.getItem("token").toString();
       const data = this.createDataForEditRequest();
       const res = await axios.put(url, data);
-      console.log(res.data.message);
+      // console.log(res.data.message);
     } catch (err) {
-      console.log("Error while trying to save the changes!");
-      console.log(err.response);
+      // console.log("Error while trying to save the changes!");
+      // console.log(err.response);
       alert("error");
     }
   };
@@ -253,7 +253,7 @@ class EditOrder extends Component {
   };
 
   render() {
-    console.log("[EditOrder] render");
+    // console.log("[EditOrder] render");
     const form = this.createForm();
     const editOrder = !this.props.OrderToEdit ? null : form;
     return  this.state.loading ? <Spinner /> : editOrder;

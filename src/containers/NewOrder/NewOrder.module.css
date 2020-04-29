@@ -7,10 +7,10 @@
   align-items: center;
   justify-content: space-between;
   font-family: "Heebo", sans-serif;
+  direction: rtl;
 }
 
 .Title {
-  
   margin-top: 40px;
   width: 100%;
   text-align: center;
@@ -30,8 +30,8 @@
 
 .NewOrder .Line {
   background-color: rgb(91, 130, 155);
-  width: 70%;
-  height: 5px;
+  width: 80%;
+  height: 6px;
   border-radius: 5px;
 }
 
@@ -50,24 +50,18 @@
 .SubTitles h1,
 .SubTitles h3 {
   margin: 0;
+  padding: 0;
   color: white;
 }
 
-.SubTitles .Sale {
+/* .SubTitles .Sale {
+  margin-right: 20px;
   font-weight: bolder;
   text-decoration: line-through;
   text-decoration-thickness: 0.2rem;
   color: rgb(241, 127, 33);
-}
+} */
 
-.NewOrder .SubTitles h1 {
-  font-size: 1.2rem;
-}
-
-.NewOrder .SubTitles h3 {
-  font-size: 0.8rem;
-  font-weight: 400;
-}
 
 .Line {
   background-color: rgb(241, 127, 33);
@@ -89,12 +83,12 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 50px;
 }
 .MaskInfo {
-  max-width: 60%;
+  min-width: 100%;
   margin-top: 20px;
   border-radius: 7%;
 }
@@ -103,9 +97,10 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
+
 
 .MaskItemInfo h4 {
   margin: 10px 0;
@@ -113,7 +108,6 @@
   color: white;
   text-align: end;
   font-weight: bold;
-  font-size: 0.75rem;
   direction: rtl;
 }
 
@@ -161,26 +155,57 @@
   display: none;
 }
 
+.Info{
+  width: 90%;
+}
+
+.SubTitlesInfo{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1px 0;
+}
+
+.SubTitlesInfo h1{
+  font-size: 1.2em;
+}
+
+
+.SubTitlesInfo h3{
+  font-size: 0.9em;
+  margin-right: 15px;
+}
+
+.SubTitlesInfo .PriceInfo{
+  color: white;
+}
+
+.SubTitlesInfo .SaleInfo{
+  color: rgb(241, 127, 33);
+  font-weight: bolder;
+  text-decoration: line-through;
+  /* text-decoration-thickness: 0.2rem; */
+}
+
+.SubTitlesBottom{
+  width: 100%;
+}
+
+.Payments img{
+  margin: 20px 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+
 @media (min-width: 170px) {
   .SubTitles .Line {
     background-color: rgb(241, 127, 33);
     width: 70%;
     height: 3px;
-  }
-  .SubTitles .LineThin {
-    width: 70%;
-    height: 1px;
-    background-color: rgb(241, 127, 33);
-    border: none;
-    text-align: center;
-  }
-
-  .NewOrder .SubTitles h1 {
-    font-size: 0.8rem;
-  }
-
-  .NewOrder .SubTitles h3 {
-    font-size: 0.5rem;
   }
 
   .Body .Test {
@@ -194,12 +219,13 @@
  
   .NewOrder .Title h1 {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .MaskItemInfo h4 {
-    font-size: 6px;
-    margin: 6px 0;
+    font-size: 7px;
+    margin: 5px 0;
+    font-weight: bolder;
   }
 
   .MaskItemInfo img {
@@ -209,21 +235,51 @@
   }
 
   .MaskPicture {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    position: absolute;
+    left: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   }
 
   .MaskPicture img {
     max-width: 100%;
-    /* padding-left: 40%; */
-    /* left: -25px; */
-    top: 29px;
+    top: 32px;
+
   }
 
   .OrderForm {
-    width: 70%;
+    width: 80%;
   }
+  .NewOrder .SubTitles h1.Delivery {
+    font-size: 1rem;
+  } 
+
+  .NewOrder .SubTitles h3.Delivery {
+    font-size: 0.6rem;
+  } 
+
+  .SubTitlesInfo h1{
+    font-size: 10px;
+  }
+  
+  
+  .SubTitlesInfo h3{
+    font-size: 7px;
+    margin-right: 15px;
+  }
+
+
+.SubTitlesInfo .SaleInfo{
+  text-decoration-thickness: 0.1rem;
 }
 
+ .Payments img{
+    margin: 20px 3px;
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+  }
+}
 
 
 @media (min-width: 360px) {
@@ -248,6 +304,7 @@
   .MaskItemInfo h4 {
     font-size: 12px;
     margin: 8px 0;
+    color: white
   }
 
   .MaskItemInfo img {
@@ -272,15 +329,34 @@
     width: 270px;
   }
 
+  .SubTitlesInfo h1{
+    font-size: 1.1rem;
+  }
+  
+  
+  .SubTitlesInfo h3{
+    font-size: 0.8rem;
+    margin-right: 15px;
+  }
+
+
+.SubTitlesInfo .SaleInfo{
+  text-decoration-thickness: 0.1rem;
+}
+
+
+  .Payments img{
+    margin: 20px 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
 
 }
 
 @media (min-width: 400px) {
   /* iphone 8 + */
-  .MaskInfo{
-    margin-top: 0;
-    margin-right: 3%;
-  }
 
   .NewOrder {
     overflow: hidden;
@@ -291,7 +367,7 @@
 
   .NewOrder  .SubTitles .Line {
     background-color: rgb(241, 127, 33);
-    width: 70%;
+    width: 90%;
     height: 5px;
   }
 
@@ -300,18 +376,6 @@
     height: 2px;
   }
   
-  .NewOrder .SubTitles h1 {
-    font-size: 1.7rem;
-    width: 100%;
-    text-align: center;
-    padding: 0 20px;
-  }
-  
-  .NewOrder .SubTitles h3 {
-    width: 100%;
-    text-align: center;
-    font-size: 1.3rem;
-  }
 
   .Title {
     margin-top: 30px;
@@ -324,32 +388,72 @@
   .Body .Test {
     margin-bottom: 40px;
   }
-  .MaskItemInfo h4 {
-    font-size: 0.8rem;
-    font-weight: 400;
+
+  .MaskInfo{
+    min-width: 100%;
+    margin-top: 0;
+    margin-right: 3%;
+  }
+
+  .MaskItemInfo{
+    width: 100%;
     margin: 10px 0;
+    
+  }
+  .MaskItemInfo h4 {
+    width: 100%;
+    text-align: start;
+    font-size: 1.02rem;
+    font-weight: 400;
+    margin: 0;
   }
 
   .MaskItemInfo img {
-    margin: 0 14px;
+    margin: 0;
+    margin-left: 10px;
     height: 23px;
     width: 23px;
   }
 
   .MaskPicture {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 
   .MaskPicture img {
     max-width: auto;
-    /* padding-left: 40%; */
-    /* left: -30px; */
-    top: 0;
+    top: 35px;
   }
 
   .OrderForm {
     width: 280px;
   }
+
+  .NewOrder .SubTitles h1.Delivery {
+    font-size: 1.3rem;
+  } 
+
+  .NewOrder .SubTitles h3.Delivery {
+    font-size: 0.9rem;
+  } 
+
+  .SubTitlesInfo h1{
+    font-size: 1.2rem;
+  }
+  
+  
+  .SubTitlesInfo h3{
+    font-size: 0.9rem;
+    margin-right: 15px;
+  }
+
+  .Payments img{
+    margin: 20px 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+  }
+    
+
 }
 
 @media (min-width: 500px) {
@@ -464,23 +568,6 @@
     height: 12px;
   }
 
-  .NewOrder .SubTitles h1 {
-    font-size: 1.7rem;
-    margin: 10px 0;
-  }
-
-  .NewOrder .SubTitles h3 {
-    margin: 10px 0;
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
-
-  .SubTitles {
-    justify-content: center;
-    width: 330px;
-    border-radius: 25px;
-  }
-
   .Title h1 {
     font-size: 2.9rem;
   }
@@ -505,7 +592,7 @@
   }
 
   .OrderForm {
-    width: 310px;
+    width: 330px;
     margin-left: 50px;
     display: flex;
     justify-content: center;
@@ -527,6 +614,20 @@
     display: flex;
     justify-content: center;
     margin: 0;
+  }
+
+  .SubTitles{
+    width: 350px;
+    justify-content: space-evenly;
+    border-radius: 20px;
+  }
+
+  .SubTitlesInfo{
+    width: 100%;
+  }
+
+  .SubTitlesInfo h1{
+    font-size: 1.1em;
   }
 }
 
@@ -575,14 +676,6 @@
     font-size: 1.8rem;
   }
 
-  .NewOrder .SubTitles h1 {
-    font-size: 1.9rem;
-  }
-
-  .NewOrder .SubTitles h3 {
-    font-size: 1.6rem;
-  }
-
   .Body .Test {
     margin-top: 90px;
     margin-bottom: 80px;
@@ -596,8 +689,6 @@
     padding: 0 35%;
   }
 
- 
-
   .SubTitles {
     width: 400px;
   }
@@ -608,16 +699,6 @@
 }
 
 @media (min-width: 1050px) {
-
-  .NewOrder .SubTitles h1 {
-    font-size: 2.3rem;
-  }
-
-  .NewOrder .SubTitles h3 {
-    font-size: 1.6rem;
-  }
-  
- 
 
   .MaskItemInfo h4 {
     font-size: 1.9rem;
@@ -638,15 +719,6 @@
     font-size: 5.2rem;
   }
 
-  .NewOrder .SubTitles h1 {
-    font-size: 2.8rem;
-  }
-
-  .NewOrder .SubTitles h3 {
-    font-size: 2rem;
-  }
-  
-  
   .MaskItemInfo img {
     margin: 0 35px;
     height: 60px;
@@ -685,6 +757,32 @@
   .Middle {
     margin: 30px 0;
   }
+
+  .NewOrder .SubTitles h1.Delivery {
+    font-size: 2rem;
+  } 
+
+  .NewOrder .SubTitles h3.Delivery {
+    font-size: 1.2rem;
+  } 
+
+  .Payments img{
+    margin: 20px 10px;
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+  }
+
+  .SubTitlesInfo h1{
+    font-size: 1.7em;
+  }
+  
+  
+  .SubTitlesInfo h3{
+    font-size: 0.9em;
+    margin-right: 15px;
+  }
+  
 }
 
 

@@ -1,0 +1,9 @@
+.Error{
+    width: 300px;    
+}
+
+.Error h1{
+    font-size: 1.3rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+

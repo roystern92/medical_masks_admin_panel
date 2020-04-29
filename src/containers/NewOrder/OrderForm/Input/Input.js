@@ -2,7 +2,7 @@ import React from "react";
 //css module
 import classes from "./Input.module.css";
 
-const input = props => {
+const input = (props) => {
   let inputElement = null;
   let inputClasses = [];
   let res;
@@ -19,17 +19,24 @@ const input = props => {
           value={props.value}
           onChange={props.changed}
         >
-          {props.elementConfig.options.map(option => (
-            <option key={option.value} value={option.value}>
-              {option.displayValue}
-            </option>
-          ))}
+            {props.elementConfig.options.map((option) => (
+        <option
+          key={option.value}
+          value={option.value}
+          disabled={option.disabled}
+          label={option.label}
+        >
+          {option.displayValue}
+        </option>
+      ))}
         </select>
       );
-      res = <div className={classes.Select}>
-      <label className={classes.Label}>{props.label}</label>
-      {inputElement}
-    </div>;
+      res = (
+        <div className={classes.Input}>
+          <label className={classes.Label}>{props.label}</label>
+          {inputElement}
+        </div>
+      );
       break;
     default:
       inputClasses.push(classes.InputElement);
@@ -41,16 +48,15 @@ const input = props => {
           onChange={props.changed}
         />
       );
-      res = <div className={classes.Input}>
-      <label className={classes.Label}>{props.label}</label>
-      {inputElement}
-    </div>;
+      res = (
+        <div className={classes.Input}>
+          <label className={classes.Label}>{props.label}</label>
+          {inputElement}
+        </div>
+      );
   }
 
   return res;
 };
 
 export default input;
-
-
-
