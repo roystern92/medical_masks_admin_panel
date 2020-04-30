@@ -9,7 +9,7 @@ class NewOrder extends Component {
   };
 
   componentDidMount() {
-    // console.log("[NewOrder] cdm");
+    console.log("[NewOrder] cdm");
   }
 
   createPaymentIcons = () => {

@@ -106,7 +106,7 @@ const controls = {
     elementConfig: {
       options: [
         { value: "open", displayValue: "Open" },
-        { value: "process", displayValue: "Process" },
+        { value: "process", displayValue: "In-process" },
         { value: "closed", displayValue: "Closed" },
         { value: "not interested", displayValue: "Not interested" },
       ],

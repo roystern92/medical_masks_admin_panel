@@ -4,6 +4,7 @@ import * as actions from "../../store/actions/index";
 import { connect } from "react-redux";
 import OrderSummery from "./OrderSummery/OrderInfo";
 import Filter from "./Filter/Filter";
+import Pagination from '../../components/Pagination/Pagination';
 
 class Orders extends Component {
   state = {
@@ -12,7 +13,7 @@ class Orders extends Component {
   };
 
   componentDidMount() {
-    console.log("[Ordres] componentDidMount");
+    // console.log("[Ordres] componentDidMount");
     this.props.fetchOrders();
   }
 
@@ -42,14 +43,27 @@ class Orders extends Component {
     return <Filter filter={this.filterOrdersHandler} />;
   };
 
+  pageClickedHandler = (currentPage) => {
+        let filter  = {...this.props.filter};
+      if(filter === null){
+        filter = {currentPage: currentPage};
+      }else{
+        filter['currentPage'] = currentPage;
+      }
+
+      console.log(filter);
+      this.props.fetchOrders(filter);
+  }
+
   render() {
-    console.log("[Orders] render");
+    // console.log("[Orders] render");
     const orders = this.createOrders();
     const filter = this.createFilter();
     const ordersPage = (
       <div className={classes.OrdersPage}>
         {filter}
         {orders}
+        <Pagination clicked={this.pageClickedHandler} max={this.props.max}/>
       </div>
     );
     return ordersPage;
@@ -59,6 +73,8 @@ class Orders extends Component {
 const mapStateToProps = (state) => {
   return {
     orders: state.orders,
+    max: state.maxPages,
+    filter: state.filter
   };
 };
 

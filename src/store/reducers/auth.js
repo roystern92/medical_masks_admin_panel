@@ -7,6 +7,8 @@ const initialState = {
   error: null,
   orders: null,
   orderEdited: null,
+  maxPages: null, 
+  filter: null
 };
 
 const editOrder = (state, action) => {
@@ -15,9 +17,11 @@ const editOrder = (state, action) => {
 
 const adminOrders = (state, action) => {
   return updateObject(state, {
-    orders: action.orders,
+    orders: action.orders.reverse(),
+    maxPages: action.max,
     error: null,
     orderEdited: null,
+    filter: action.filter
   });
 };
 

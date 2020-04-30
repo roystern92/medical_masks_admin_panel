@@ -1,10 +1,12 @@
 import axios from "../../axios/axios";
 import * as actionTypes from "./actionTypes";
 
-const adminOrders = (orders) => {
+const adminOrders = (orders, max, filter) => {
   return {
     type: actionTypes.ADMIN_ORDERS,
     orders: orders,
+    max: max,
+    filter: filter
   };
 };
 
@@ -95,12 +97,11 @@ export const auth = (email, password) => {
 export const fetchOrders = (filter) => {
   return async (dispatch) => {
     try {
-      console.log(filter);
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.getItem("token").toString();
       const url = "/admin/orders";
       let res = await axios.post(url, filter);
-      dispatch(adminOrders(res.data.orders));
+      dispatch(adminOrders(res.data.orders, res.data.max, filter));
     } catch (err) {
       dispatch(authFail(err.response.data.message));
       console.log(err.response);

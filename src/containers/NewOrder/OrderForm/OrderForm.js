@@ -131,7 +131,7 @@ export default class OrderForm extends Component {
           },200);
         } catch (err) {
           window.location = '';
-          // console.log(err);
+          console.log(err);
         }
       });
     }

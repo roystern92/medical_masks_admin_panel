@@ -17,7 +17,7 @@ class OrderInfo extends Component {
   };
 
   componentDidMount() {
-    console.log("[OrderSummery] componentDidMount");
+    // console.log("[OrderSummery] componentDidMount");
   }
 
   createDetails = () => {
@@ -33,27 +33,34 @@ class OrderInfo extends Component {
     if (open) {
       res = {
         label: "status",
-        content: "open",
+        content: "Open",
         color: Colors.GREEN,
         id: order._id,
       };
     } else if (closed) {
       res = {
         label: "status",
-        content: "closed",
+        content: "Closed",
         color: Colors.RED,
         id: order._id,
       };
-    } else {
+    } else if(process) {
       res = {
         label: "status",
-        content: "process",
+        content: "In-process",
         color: Colors.ORANGE,
         id: order._id,
-      };
+      }}
+      else{
+          res = {
+            label: "status",
+            content: "error, status is not valid.",
+            color: Colors.ORANGE,
+            id: 'error, status is not valid.',
+          }
+      }
+      return res;
     }
-    return res;
-  };
 
   createDetailsForOrderSummery = (order) => {
     let status = this.createStatusDetails(order);

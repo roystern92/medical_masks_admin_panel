@@ -27,7 +27,7 @@ class Filter extends Component {
   };
 
   componentDidMount() {
-    console.log("[Filter] cdm");
+    // console.log("[Filter] cdm");
   }
 
   onDateChange = (key, date) => {
@@ -105,6 +105,7 @@ class Filter extends Component {
 
   filterHandler = (event) => {
     event.preventDefault();
+    // redux
     const filter = {
       hasFilter: true,
       status: this.state.status.value,
