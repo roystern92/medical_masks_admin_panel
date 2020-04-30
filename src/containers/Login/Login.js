@@ -5,11 +5,11 @@ import Title from "../../components/UI/Title/Title";
 import { getLoginControls } from "../../shared/Controls/login";
 import Colors from "../../shared/Colors/Colors";
 import Sizes from "../../shared/Sizes/Sizes";
-import Inputs from "../../components/UI/Inputs/Inputs";
-import Spinner from '../../components/UI/Spinner/Spinner';
+import Input from "../../components/UI/Input/Input";
+import Spinner from "../../components/UI/Spinner/Spinner";
 import Button from "../../components/UI/Button/Button";
-import axios from '../../axios/axios';
-import withErrorHandler from  '../withErrorHandler/withErrorHandler';
+import axios from "../../axios/axios";
+import withErrorHandler from "../withErrorHandler/withErrorHandler";
 
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
@@ -19,7 +19,8 @@ class Login extends Component {
     controls: getLoginControls(),
     formIsValid: false,
     error: false,
-    loading: false
+    loading: false,
+    showPassword: false
   };
 
   componentDidMount() {
@@ -67,17 +68,70 @@ class Login extends Component {
 
   submitHandler = (event) => {
     event.preventDefault();
-    const {Email, Password} = this.state.controls;
+    const { Email, Password } = this.state.controls;
     this.props.onAuth(Email.value, Password.value);
   };
 
-  createForm = (elements) => {
+  createInputs = () => {
+    let arrayControls = createArrayFromObject(this.state.controls);
+    const inputs = arrayControls.map((el) => {
+      const {
+        id,
+        config: {
+          elementType,
+          valid,
+          touched,
+          validation,
+          elementConfig,
+          label,
+          value,
+        },
+      } = el;
+
+      return (
+        <Input
+          elementType={elementType}
+          label={label}
+          key={id}
+          invalid={!valid}
+          touched={touched}
+          shouldValidate={validation}
+          elementConfig={elementConfig}
+          value={value}
+          changed={(event) => this.onInputChangeHandler(event, id)}
+        />
+      );
+    });
+
+    const res = (
+      <div className={classes.Inputs}>
+        {inputs}
+        <input type="checkbox" checked={this.state.showPassword} onChange={this.showPasswordHandler} />
+        <label >Show Password</label>
+      </div>
+    );
+    return res;
+  };
+
+  showPasswordHandler = () => {
+    let updatedControls = {...this.state.controls};
+    let password = updatedControls.Password;
+    if(!this.state.showPassword){
+      console.log("fuck");
+      password.elementConfig.type = 'text';
+    }else{
+      password.elementConfig.type = 'password';
+    }
+    updatedControls.Password = password;
+    this.setState({showPassword: !this.state.showPassword, controls: updatedControls});
+  }
+
+  createForm = () => {
     const title = (
       <Title title="Login" color={Colors.DARKGREY} size={Sizes.MEDIUM} />
     );
-    const inputs = (
-      <Inputs change={this.onInputChangeHandler} elements={elements} />
-    );
+    const inputs = this.createInputs();
+
     const submit = (
       <Button
         clicked={this.submitHandler}
@@ -100,12 +154,14 @@ class Login extends Component {
     // console.log("[Login] render");
     let elements = createArrayFromObject(this.state.controls);
     let form = this.createForm(elements);
-    const login = this.props.loading ? 
-    <div className={classes.Downloader}>
-      {form}
-      <Spinner />
-      </div> : 
-      <div className={classes.Downloader}>{form}</div>;
+    const login = this.props.loading ? (
+      <div className={classes.Downloader}>
+        {form}
+        <Spinner />
+      </div>
+    ) : (
+      <div className={classes.Downloader}>{form}</div>
+    );
 
     return login;
   }
@@ -126,4 +182,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStatesToProps, mapDispatchToProps)(withErrorHandler(Login, axios));
+export default connect(
+  mapStatesToProps,
+  mapDispatchToProps
+)(withErrorHandler(Login, axios));
