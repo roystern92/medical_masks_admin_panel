@@ -65,9 +65,6 @@ class OrderInfo extends Component {
   createDetailsForOrderSummery = (order) => {
     let status = this.createStatusDetails(order);
     let createAt = new Date(order.createdAt);
-
-    // I reduce 3 hourse cuz israel local time is 3 hours later than the time of the timestemp of the server.
-    createAt.setHours(createAt.getHours() - 3);
     createAt = createAt.toLocaleString();
     let res = [
       status,
