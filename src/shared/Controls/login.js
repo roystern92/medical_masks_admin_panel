@@ -8,8 +8,7 @@ const controls =  {
       },
       value: "",
       validation: {
-        required: true,
-        isEmail: true,
+        required: true
       },
       valid: false,
       touched: false,
