@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 import classes from "./EditOrder.module.css";
 import { connect } from "react-redux";
 import {
@@ -16,7 +16,7 @@ import Colors from "../../../shared/Colors/Colors";
 import { createStatusByKey } from "../../../shared/Types/status";
 import Address from "../../../shared/Types/address";
 import axios from "../../../axios/axios";
-import Spinner from '../../../components/UI/Spinner/Spinner';
+import Spinner from "../../../components/UI/Spinner/Spinner";
 
 class EditOrder extends Component {
   state = {
@@ -50,8 +50,14 @@ class EditOrder extends Component {
   setControlsWithOrderValues = () => {
     let updatedControls = { ...this.state.controls };
     const { name, address, status, communication } = this.props.OrderToEdit;
-    updatedControls.FirstName.value = name.trim().split(" ")[0];
-    updatedControls.LastName.value = name.split(" ")[1] ? name.trim().split(" ")[1] : " ";
+    updatedControls.FirstName.value = name.split(" ")[0];
+    let lastName = '';
+    let arrayOfNames = name.split(" ");
+    for(let i = 1 ; i < arrayOfNames.length; i++){
+      lastName += arrayOfNames[i];
+    }
+    updatedControls.LastName.value = lastName;
+      console.log(name);
     updatedControls.City.value = address.city;
     updatedControls.Street.value = address.street;
     updatedControls.Number.value = address.number;
@@ -138,26 +144,20 @@ class EditOrder extends Component {
     const data = {
       address: address,
       name: fullName,
-      communication:controls.Communication.value,
-      status: status
+      communication: controls.Communication.value,
+      status: status,
     };
-    // console.log(data);
     return data;
   };
 
   saveChanges = async () => {
     try {
-      // console.log("Before editing....");
       const url = "/admin/order/edit/" + this.props.OrderToEdit._id;
-      // console.log(url);
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.getItem("token").toString();
       const data = this.createDataForEditRequest();
-      const res = await axios.put(url, data);
-      // console.log(res.data.message);
+      await axios.put(url, data);
     } catch (err) {
-      // console.log("Error while trying to save the changes!");
-      // console.log(err.response);
       alert("error");
     }
   };
@@ -165,25 +165,23 @@ class EditOrder extends Component {
   submitHandler = (event) => {
     event.preventDefault();
     if (this.state.valid) {
-      this.setState({loading: true}, () => {
+      this.setState({ loading: true }, () => {
         this.saveChanges();
         setTimeout(() => {
-          this.props.history.push('/orders');
-        }, 1000)
+          this.setState({ loading: false });
+        }, 1000);
       });
     }
   };
 
-
-      getSubmitButton = () => {
-        const submit = (
-          <div className={classes.Submit}>
-            <button onClick={(event) => this.submitHandler(event)}>Save</button>
-          </div>
-        );
-        return submit;
-      };
-    
+  getSubmitButton = () => {
+    const submit = (
+      <div className={classes.Submit}>
+        <button onClick={(event) => this.submitHandler(event)}>Save</button>
+      </div>
+    );
+    return submit;
+  };
 
   getInputsWithDifftentTypesCombined = (
     arrayControls,
@@ -256,7 +254,7 @@ class EditOrder extends Component {
     // console.log("[EditOrder] render");
     const form = this.createForm();
     const editOrder = !this.props.OrderToEdit ? null : form;
-    return  this.state.loading ? <Spinner /> : editOrder;
+    return this.state.loading ? <Spinner /> : editOrder;
   }
 }
 const mapStateToProps = (state) => {

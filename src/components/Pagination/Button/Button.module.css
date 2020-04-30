@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 7px;
 }
 
 .Button button {
@@ -38,4 +39,47 @@
 .Grey button{
     background-color: rgb(29, 29, 29);
     color: white;
+}
+
+@media(min-width: 300px){
+  .Button button {
+    width: 100%;
+    padding: 3px 5px ;
+    font-size: 0.7rem;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 4px;
+}
+}
+
+
+@media(min-width: 500px){
+  .Button button {
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-radius: 3px;
+    padding: 5px 12px;
+    outline: none;
+}
+
+.Button {
+  margin: 0 7px;
+}
+}
+
+
+@media(min-width: 1300px){
+  .Button button {
+    font-size: 1.3rem;
+    border-radius: 5px;
+    padding: 7px 12px;
+}
+
+.Button {
+  margin: 0 10px;
+}
 }

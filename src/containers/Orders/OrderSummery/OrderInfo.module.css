@@ -10,7 +10,6 @@
   border-radius: 5px;
   box-shadow: 0 0 2px 2px rgb(190, 189, 180);
   width: 90%;
-
 }
 
 .EditButton{
@@ -28,5 +27,7 @@
 
 @media (min-width: 700px) {
   .OrderSummery {
+  width: 60%;
+  margin: 15px 20%;
   }
 }

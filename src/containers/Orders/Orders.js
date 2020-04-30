@@ -59,11 +59,12 @@ class Orders extends Component {
     // console.log("[Orders] render");
     const orders = this.createOrders();
     const filter = this.createFilter();
+    const pages = this.props.orders ? <Pagination clicked={this.pageClickedHandler} max={this.props.max}/> : null;
     const ordersPage = (
       <div className={classes.OrdersPage}>
         {filter}
         {orders}
-        <Pagination clicked={this.pageClickedHandler} max={this.props.max}/>
+        {pages}
       </div>
     );
     return ordersPage;

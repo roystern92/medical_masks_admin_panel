@@ -11,14 +11,16 @@ import {
 import Input from "./Input/Input";
 import axios from "../../../axios/axios";
 import Spinner from "../../../components/UI/Spinner/Spinner";
+import withError from '../withErrorHandler/withErrorHandler';
 
-export default class OrderForm extends Component {
+class OrderForm extends Component {
   state = {
     controls: getCreateOrderControls(),
     valid: false,
     loading: false,
     finished: false,
   };
+
 
   componentDidMount() {
     // console.log("[OrderForm] componentDidMount");
@@ -127,8 +129,8 @@ export default class OrderForm extends Component {
           // console.log(data);
           await axios.post(url, data);
           setTimeout(() => {
-            window.location = '';
-          },200);
+            this.setState({loading: false});
+          },300);
         } catch (err) {
           window.location = '';
           console.log(err);
@@ -174,3 +176,6 @@ export default class OrderForm extends Component {
     return form;
   }
 }
+
+
+export default withError(OrderForm, axios);

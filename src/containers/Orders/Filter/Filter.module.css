@@ -86,11 +86,14 @@
 
 
 
-@media (min-width: 950px){
+@media (min-width: 1300px){
+
   .Dates {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+      width: 70%;
+      padding: 15px 5px;
   }
 
   .Filter {

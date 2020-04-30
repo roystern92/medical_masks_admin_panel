@@ -33,6 +33,7 @@
   font-family: 'Comic Neue', cursive;
   height: 100%;
   font-size: 1.2rem;
+  border-radius: 5px;
   margin: 0 auto;
   outline: none;
   border: none;
@@ -45,12 +46,13 @@
   text-decoration: none;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 350px) {
 
  
   .Button .Btn {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0 auto;
+    padding: 2px 3px;
   }
 
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import classes from './Edit.module.css';
 import EditOrder from './EditOrder/EditOrder';
-
+import withErrorHandler from './withErrorHandler/withErrorHandler';
+import axios from '../../axios/axios';
 class Edit extends Component {
     render() {
         return (
@@ -12,4 +13,4 @@ class Edit extends Component {
     }
 }
 
-export default Edit;
+export default withErrorHandler(Edit,axios);
