@@ -17,7 +17,7 @@ const editOrder = (state, action) => {
 
 const adminOrders = (state, action) => {
   return updateObject(state, {
-    orders: action.orders.reverse(),
+    orders: action.orders,
     maxPages: action.max,
     error: null,
     orderEdited: null,
