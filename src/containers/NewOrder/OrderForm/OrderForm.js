@@ -11,7 +11,7 @@ import {
 import Input from "./Input/Input";
 import axios from "../../../axios/axios";
 import Spinner from "../../../components/UI/Spinner/Spinner";
-import withError from '../withErrorHandler/withErrorHandler';
+import withError from "../withErrorHandler/withErrorHandler";
 
 class OrderForm extends Component {
   state = {
@@ -20,7 +20,6 @@ class OrderForm extends Component {
     loading: false,
     finished: false,
   };
-
 
   componentDidMount() {
     // console.log("[OrderForm] componentDidMount");
@@ -100,12 +99,12 @@ class OrderForm extends Component {
     };
     let street = "";
     const addressArr = controls.Street.value.split(" ");
-    for (let i = 0; i < addressArr.length - 1; i++) {
-      street += " " + addressArr[i];
-    }
+      for (let i = 0; i < addressArr.length - 1; i++) {
+        street += " " + addressArr[i];
+      }
 
     res.street = addressArr.length > 1 ? street : controls.Street.value;
-    res.streetNumber = addressArr[addressArr.length - 1];
+    res.streetNumber = addressArr.length > 1 ? addressArr[addressArr.length - 1] : '';
     return res;
   };
 
@@ -129,10 +128,10 @@ class OrderForm extends Component {
           // console.log(data);
           await axios.post(url, data);
           setTimeout(() => {
-            this.setState({loading: false});
-          },300);
+            this.setState({ loading: false });
+          }, 700);
         } catch (err) {
-          window.location = '';
+          window.location = "";
           console.log(err);
         }
       });
@@ -176,6 +175,5 @@ class OrderForm extends Component {
     return form;
   }
 }
-
 
 export default withError(OrderForm, axios);

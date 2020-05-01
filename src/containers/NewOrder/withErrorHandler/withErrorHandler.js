@@ -37,7 +37,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
     };
 
     render() {
-      let msg = 'הזמנתך נקלטה במערכת.';
+      let msg = 'הזמנתך נקלטה במערכת, ניצור עמך קשר בהקדם.';
 
       if(this.state.message && this.state.error){
         msg = 'Unfortunately the site is down for a bit of maintenance right now.';
