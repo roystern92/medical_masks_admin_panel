@@ -64,12 +64,14 @@ class OrderInfo extends Component {
 
   createDetailsForOrderSummery = (order) => {
     let status = this.createStatusDetails(order);
-    let createAt = new Date(order.createdAt);
-    createAt = createAt.toLocaleString();
+    let createdAt = new Date(order.createdAt);
+    createdAt.setHours(createdAt.getHours() - 3);
+    createdAt = createdAt.toLocaleString();
+
     let res = [
       status,
       { label: "name", content: order.name, color: Colors.BLUE, id: order._id },
-      { label: "createdAt", content: createAt, color: Colors.BLACK, id: order._id }
+      { label: "createdAt", content: createdAt, color: Colors.BLACK, id: order._id }
     ];
 
     if(this.state.showInfo){
@@ -81,7 +83,7 @@ class OrderInfo extends Component {
         { label: "amount", content: order.masks.amount, color: Colors.PURPLE, id: order._id },
         { label: "address", content: address, color: Colors.PURPLE, id: order._id },
         { label: "contact", content: order.communication, color: Colors.PURPLE, id: order._id },
-        { label: "createdAt", content: createAt, color: Colors.BLACK, id: order._id },
+        { label: "createdAt", content: createdAt, color: Colors.BLACK, id: order._id },
         { label: "updatedBy", content: order.updatedBy, color: Colors.BLACK, id: order._id }
       ];
     }
