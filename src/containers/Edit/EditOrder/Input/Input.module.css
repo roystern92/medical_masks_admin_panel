@@ -57,13 +57,8 @@
 
 .SelectElement:focus {
   outline: none;
-  padding-left: 2000px;
 
 }
-
-
-
-
 
 .Invalid {
   border: 1px solid red;
