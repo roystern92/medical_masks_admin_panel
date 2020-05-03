@@ -105,6 +105,7 @@ class Filter extends Component {
 
   filterHandler = (event) => {
     event.preventDefault();
+
     // redux
     const filter = {
       hasFilter: true,
@@ -112,6 +113,7 @@ class Filter extends Component {
       from: this.state.from,
       to: this.state.to,
     };
+    console.log(filter);
       this.props.filter(filter);
   };
 
