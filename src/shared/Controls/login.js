@@ -4,7 +4,7 @@ const controls =  {
       elementType: "input",
       elementConfig: {
         type: "email",
-        placeholder: "exemple@site.com",
+        placeholder: "example@site.com",
       },
       value: "",
       validation: {

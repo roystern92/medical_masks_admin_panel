@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Admin Panel
 
-## Available Scripts
+Admin panel for keep tracking of new orders and manage them.
 
-In the project directory, you can run:
+[![Image from Gyazo](https://i.gyazo.com/0be731c43cb6747363d8ab33a15f8cf7.gif)](https://gyazo.com/0be731c43cb6747363d8ab33a15f8cf7)
 
-### `npm start`
+[![Image from Gyazo](https://i.gyazo.com/94198901ccca86e4a26e876b84044bd8.gif)](https://gyazo.com/94198901ccca86e4a26e876b84044bd8)
+ 
+[![Image from Gyazo](https://i.gyazo.com/ba65c45ad66ba1c959b3f4c55827cef3.gif)](https://gyazo.com/ba65c45ad66ba1c959b3f4c55827cef3)
+ 
+[![Image from Gyazo](https://i.gyazo.com/b7021853fdf99711ea2ada4f330bcbdf.gif)](https://gyazo.com/b7021853fdf99711ea2ada4f330bcbdf)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![Image from Gyazo](https://i.gyazo.com/68ac040957b7d72cbb69d580ce16181c.gif)](https://gyazo.com/68ac040957b7d72cbb69d580ce16181c)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[![Image from Gyazo](https://i.gyazo.com/c8713540dc6f13ed8b9ed7eeef2e9bdf.gif)](https://gyazo.com/c8713540dc6f13ed8b9ed7eeef2e9bdf)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+* clone this repo
+* npm install
+* npm start
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+npm & node must be installed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Optional - Run Server
+In order to fully install the app you will need to run the server side.
+* Server - https://github.com/roystern92/tasks_server.git
 
-### `npm run eject`
+## Reflection
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I started by using  the `create-react-app` boilerplate, then adding `react-router`. I used `redux` in order to centralized the application state and `redux-thunk` for handling asynchronous services from the redux store. I used `axios` for handling requests from the client to the server. I created most of the UI component that are used in this project and styled them so i can reuse them in a future projects.    
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The technologies implemented in this project are React, React-Router, Redux, Bootstrap, ReactStrap, React-datepicker, ReactContextMenu and a significant amount of CSS. I chose to use the `create-react-app` boilerplate to minimize initial setup and invest more time in diving into weird technological rabbit holes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Built With
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* [ReactJS](https://reactjs.org) - The front framework.
+* [React-router](https://www.npmjs.com/package/react-router) - Declarative routing for React.
+* [Redux](https://www.npmjs.com/package/redux) - Predictable state container for JavaScript web apps.
 
-## Learn More
+## Authors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* **Roy Stern** - *Initial work*
